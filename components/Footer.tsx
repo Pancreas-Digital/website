@@ -44,7 +44,7 @@ export default function SmallWithSocial() {
         </Link>
         <Text>© 2021 Pancreas Digital. Todos los derechos reservados</Text>
         <Stack direction={'row'} spacing={6}>
-          <SocialButton label={'Twitter'} href={'https://twitter.com/fedemotta_'}>
+          <SocialButton label={'Twitter'} href={'https://twitter.com/PancreasDigital'}>
             <FaTwitter />
           </SocialButton>
           <SocialButton label={'Instagram'} href={'https://www.instagram.com/fedemotta_/'}>
