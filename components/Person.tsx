@@ -40,7 +40,7 @@ export default function SocialProfileSimple({
         <Avatar
           size={'xl'}
           src={imgSrc}
-          alt={name}
+          title={name}
           mb={4}
           pos={'relative'}
           _after={{
