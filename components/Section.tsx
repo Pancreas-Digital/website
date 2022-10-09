@@ -9,8 +9,8 @@ type Props = {
 
 export default function Section({ childrens = [<div />], title = '', texts = [''], id = '' }: Props) {
   return (
-    <Stack padding={'9vh'} minHeight={'91vh'} borderTop="1px" borderTopColor="blue.100" id={id}>
-      <Heading as="h2" textColor="blue.600" textTransform="uppercase">
+    <Stack padding={'9vh'} minHeight={'88vh'} borderTop="1px" borderTopColor="blue.100" id={id}>
+      <Heading as="h2" textColor="blue.600" textTransform="uppercase" paddingTop='15px'>
         {title}
       </Heading>
       <Divider

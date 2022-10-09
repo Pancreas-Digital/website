@@ -1,5 +1,5 @@
 import { Box, chakra, Container, Stack, Text, useColorModeValue, VisuallyHidden, Link, Image } from '@chakra-ui/react';
-import { FaGithub, FaTwitter, FaYoutube, FaInstagram, FaTelegram } from 'react-icons/fa';
+import { FaGithub, FaTwitter, FaYoutube, FaInstagram, FaTelegram, FaLinkedin } from 'react-icons/fa';
 import { ReactNode } from 'react';
 
 const SocialButton = ({ children, label, href }: { children: ReactNode; label: string; href: string }) => {
@@ -47,17 +47,20 @@ export default function SmallWithSocial() {
           <SocialButton label={'Twitter'} href={'https://twitter.com/PancreasDigital'}>
             <FaTwitter />
           </SocialButton>
-          <SocialButton label={'Instagram'} href={'https://www.instagram.com/fedemotta_/'}>
+          <SocialButton label={'Instagram'} href={'https://www.instagram.com/PancreasDigital/'}>
             <FaInstagram />
           </SocialButton>
           <SocialButton label={'YouTube'} href={'https://www.youtube.com/c/PancreasDigital'}>
             <FaYoutube />
           </SocialButton>
-          <SocialButton label={'Telegram'} href={'https://t.me/joinchat/ahNWHtI3Lsg0YTNh'}>
+          <SocialButton label={'Telegram'} href={'https://t.me/+dGk2bn6HtE40ZThh'}>
             <FaTelegram />
           </SocialButton>
           <SocialButton label={'Github'} href={'https://github.com/Pancreas-Digital'}>
             <FaGithub />
+          </SocialButton>
+          <SocialButton label={'Linkedin'} href={'https://www.linkedin.com/company/pancreas-digital'}>
+            <FaLinkedin />
           </SocialButton>
         </Stack>
       </Container>

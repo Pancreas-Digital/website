@@ -3,6 +3,7 @@ import {
   Flex,
   Avatar,
   HStack,
+  Image,
   Link,
   IconButton,
   Button,
@@ -14,7 +15,6 @@ import {
   useDisclosure,
   useColorModeValue,
   Stack,
-  Image,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon, AddIcon } from '@chakra-ui/icons';
 
@@ -33,12 +33,10 @@ const Links = [
   { text: 'Proyectos open source', url: '#proyectos-open-source', submenu: [] },
   { text: 'Escribinos', url: '#escribinos', submenu: [] },
 ];
-
 type Children = {
   text: string;
   url: string;
 };
-
 const NavLink = ({ children }: { children: Children }) => (
   <Link
     px={2}
@@ -74,28 +72,23 @@ export default function withAction() {
 
   return (
     <>
-      <Box
-        bg={useColorModeValue('blue.50', 'blue.600')}
-        px={4}
-        sx={{ position: 'sticky', top: '0', 'z-index': '1000' }}
+      <Box 
+       borderWidth='2px'
+       bg={useColorModeValue('blue.50', 'blue.600')}
+       px={4}
+       sx={{ position: 'sticky', top: '0', 'z-index': '1000' }}
       >
-        <Flex minHeight={'9vh'} alignItems={'center'} justifyContent={'space-between'}>
+        <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-            aria-label={'Abrir Menu'}
+            aria-label={'Open Menu'}
             display={{ md: 'none' }}
             onClick={isOpen ? onClose : onOpen}
-            bgColor="blue.50"
-            _hover={{
-              textDecoration: 'none',
-              bgColor: 'blue.50',
-            }}
           />
           <HStack spacing={8} alignItems={'center'}>
-            <Link title="Pancreas Digital Home">
-              <a href='#intro'>
-                <Image
+            <Link href='#intro'>
+              <Image
                   boxSize="240px"
                   maxHeight="70px"
                   p={2}
@@ -103,11 +96,13 @@ export default function withAction() {
                   src="HorizontalBlue.png"
                   alt="Pancreas Digital Logo"
                 />
-              </a>
             </Link>
-            <HStack as={'nav'} pl="20" spacing={4} display={{ base: 'none', md: 'flex' }}>
+            <HStack
+              as={'nav'}
+              spacing={4}
+              display={{ base: 'none', md: 'flex' }}>
               {Links.map((link) => (
-                <NavLink key={link.url}>{link}</NavLink>
+                <NavLink>{link}</NavLink>
               ))}
             </HStack>
           </HStack>
@@ -149,7 +144,7 @@ export default function withAction() {
           <Box pb={4} display={{ md: 'none' }}>
             <Stack as={'nav'} spacing={4}>
               {Links.map((link) => (
-                <NavLink key={link.url}>{link}</NavLink>
+                <NavLink>{link}</NavLink>
               ))}
             </Stack>
           </Box>

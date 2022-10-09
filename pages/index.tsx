@@ -18,7 +18,7 @@ const IndexPage = () => (
         <Person
           imgSrc="fedemotta.jpeg"
           name="Federico Nicolás Motta"
-          link={{ text: '@fedemotta_', url: 'https://twitter.com/fedemotta_' }}
+          link={{ text: '@PancreasDigital', url: 'https://twitter.com/PancreasDigital' }}
           description="Papá de Valentino y Franco. Programador interesado en tecnología aplicada a la diabetes. Fanático de Superman. 'Todo tiene su tiempo'
           (Eclesiastés 3:1-8)."
           tags={['programacion', 'tecnologia', 'diabetes']}
