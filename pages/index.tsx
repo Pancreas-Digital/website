@@ -2,7 +2,21 @@ import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import Section from '../components/Section';
 import Person from '../components/Person';
+import Video from '../components/Video';
+import LinkWithText from '../components/LinkWithText';
 
+const YOUTUBE_PLAYLIST_ITEMS_API = 'https://www.googleapis.com/youtube/v3/playlistItems';
+
+export async function getServerSideProps() {
+  const res = await fetch(`${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&maxResults=50&playlistId=PLpRCplanZUGdxMODznBwjIQNZg0HeJdww&key=${process.env.YOUTUBE_API_KEY}`)
+  const videos = await res.json();
+  console.log(videos);
+  return {
+      props: {
+          videos
+      }
+  }
+}
 const IndexPage = () => (
   <Layout title="Pancreas Digital - Todo sobre tecnología aplicada a la diabetes">
     <Hero />
@@ -39,6 +53,34 @@ const IndexPage = () => (
     <Section
       title="Talleres Online"
       id='talleres-online'
+      texts={[
+        'Organizamos talleres gratuitos sobre distintos temas relacionados a la diabetes.',
+        'Algunos talleres son sobre distintas aplicaciones que se usan para el control de la diabetes, otros sobre tecnologías mas nuevas o simplemente para visibilizar sobre la condición.',
+        'Estos son algunos de nuestros talleres:',
+      ]}
+      childrens={[
+        <Video 
+        videoId="TVT02w7mG2E"
+        />,
+        <Video 
+        videoId='SQgZPO3DpcA'
+        />,      
+        <Video 
+        videoId='Cj6useTz4Ug'
+        />,      
+        <Video 
+        videoId='S5ccxmV4sHI'
+        />,      
+        <Video 
+        videoId='NBry6KO4vuw'
+        />,      
+        <Video 
+        videoId='w3GbR2MTikQ'
+        />,      
+      ]}
+      bottomChildrens={[
+        <LinkWithText text='Podés ver más videos en nuestro' link={{'text':'canal de Youtube','url':'https://www.youtube.com/c/PancreasDigital'}}></LinkWithText>
+      ]}
     ></Section>
     <Section
       title="Proyectos Open Source"
