@@ -32,23 +32,53 @@ const IndexPage = () => (
         <Person
           imgSrc="fedemotta.jpeg"
           name="Federico Nicolás Motta"
-          link={{ text: '@PancreasDigital', url: 'https://twitter.com/PancreasDigital' }}
+          link={{ text: '@PancreasDigital', url: 'https://www.instagram.com/PancreasDigital/' }}
           description="Papá de Valentino y Franco. Programador interesado en tecnología aplicada a la diabetes. Fanático de Superman. 'Todo tiene su tiempo'
           (Eclesiastés 3:1-8)."
-          tags={['programacion', 'tecnologia', 'diabetes']}
+          tags={['PROGRAMACIÓN','CLOUD','GenAI', 'DIY']}
+          contact={{ text: 'Escribime', url: 'https://ig.me/m/PancreasDigital' }}
         />,
         <Person
           imgSrc="daniela.jpeg"
           name="Daniela Segalowicz"
-          link={{ text: '', url: '#' }}
+          link={{ text: '@cadapersonaunmundo', url: 'https://www.instagram.com/cadapersonaunmundo/' }}
           description="Mamá de Sol y Tomás. Psicóloga. En aprendizaje permanente, difundiendo, transmitiendo y compartiendo la importancia de estar cerca, conectados en red. 'Mí chance es hoy'"
-          tags={['psicología', 'xDrip+', 'diabetes']}
+          tags={['PSICOLOGÍA','XDRIP+','AAPS','DIY']}
+          contact={{ text: 'Escribime', url: 'https://ig.me/m/cadapersonaunmundo' }}
         />,
       ]}
     ></Section>
     <Section
       title="Todo sobre diabetes"
       id='todo-sobre-diabetes'
+      texts={[
+        'Organizamos talleres gratuitos sobre distintos temas relacionados a la diabetes.',
+        'Algunos talleres son sobre distintas aplicaciones que se usan para el control de la diabetes, otros sobre tecnologías mas nuevas o simplemente para visibilizar sobre la condición.',
+        'Estos son algunos de nuestros talleres:',
+      ]}
+      childrens={[
+        <Video 
+        videoId="FU3X73w3vkQ"
+        />,
+        <Video 
+        videoId='Ynhss8HQphA'
+        />,      
+        <Video 
+        videoId='l2KyKca25_8'
+        />,      
+        <Video 
+        videoId='ydNRvtp9uyw'
+        />,      
+        <Video 
+        videoId='P-bPLWTTCNc'
+        />,      
+        <Video 
+        videoId='6nZ1TuVTpRs'
+        />,      
+      ]}
+      bottomChildrens={[
+        <LinkWithText text='Podés ver más videos en nuestro' link={{'text':'canal de Youtube','url':'https://www.youtube.com/c/PancreasDigital'}}></LinkWithText>
+      ]}
     ></Section>
     <Section
       title="Talleres Online"
@@ -85,10 +115,6 @@ const IndexPage = () => (
     <Section
       title="Proyectos Open Source"
       id='proyectos-open-source'
-    ></Section>
-    <Section
-      title="Escribinos"
-      id='escribinos'
     ></Section>
   </Layout>
 );
