@@ -80,6 +80,7 @@ const IndexPage = () => (
         <LinkWithText text='Podés ver más videos en nuestro' link={{'text':'canal de Youtube','url':'https://www.youtube.com/c/PancreasDigital'}}></LinkWithText>
       ]}
     ></Section>
+
     <Section
       title="Talleres Online"
       id='talleres-online'
@@ -88,6 +89,7 @@ const IndexPage = () => (
         'Algunos talleres son sobre distintas aplicaciones que se usan para el control de la diabetes, otros sobre tecnologías mas nuevas o simplemente para visibilizar sobre la condición.',
         'Estos son algunos de nuestros talleres:',
       ]}
+      
       childrens={[
         <Video 
         videoId="TVT02w7mG2E"

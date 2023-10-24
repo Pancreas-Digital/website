@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
-import { Button,Stack, SlideFade, Heading, Divider, Text, HStack, Wrap, WrapItem, useDisclosure, Grid, GridItem, Center } from '@chakra-ui/react';
-import {ArrowLeftIcon, ArrowRightIcon } from '@chakra-ui/icons';
+import { Stack, Heading, Divider, Text, HStack, Wrap, WrapItem, Grid, GridItem} from '@chakra-ui/react';
+
 
 type Props = {
   childrens?: ReactNode[];
@@ -11,7 +11,6 @@ type Props = {
 };
 
 export default function Section({ childrens = [<div />],bottomChildrens = [<div />], title = '', texts = [''], id = '' }: Props) {
-  const { isOpen, onToggle } = useDisclosure();
   return (
     <Stack padding={'9vh'} minHeight={'88vh'} borderTop="1px" borderTopColor="blue.100" id={id}>
       <Heading as="h2" textColor="blue.600" textTransform="uppercase" paddingTop='15px'>
@@ -31,30 +30,18 @@ export default function Section({ childrens = [<div />],bottomChildrens = [<div 
       ))}
   
   <Grid templateColumns='repeat(10, 1fr)' gap={4}>
-  <GridItem colSpan={1} >
-    <Center>
-    {(childrens.length >= 3) ? <Button textColor="blue.600" onClick={onToggle}><ArrowLeftIcon/></Button>:""} 
-    </Center>
-  </GridItem>
   <GridItem colSpan={8}>
     <HStack display={{ sm: 'flex' }} alignItems="center" justify="center">
       <Wrap spacing="1" justify="center" alignItems="center">
       {
         childrens.map(
-          (children,index) => (
-            <SlideFade in={index >= 3 ? isOpen : !isOpen}  unmountOnExit={true} style={{ zIndex: 10, transitionDuration:"300ms" }} offsetX='400px' reverse={true} >
+          (children) => (
               <WrapItem padding="1">{children}</WrapItem>
-            </SlideFade>
           )
         )
       }
       </Wrap>
     </HStack>  
-  </GridItem>
-  <GridItem colSpan={1}>
-    <Center>
-    {(childrens.length >= 3) ? <Button textColor="blue.600" onClick={onToggle}><ArrowRightIcon/></Button>:""} 
-    </Center>
   </GridItem>
 </Grid>
       

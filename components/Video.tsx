@@ -17,7 +17,7 @@ export default function Video({
   return (
     <Center py={2}>
       <Box
-        maxW={'360px'}
+        maxW={'720px'}
         w={'full'}
         bg={useColorModeValue('white', 'gray.900')}
         boxShadow={'2xl'}
