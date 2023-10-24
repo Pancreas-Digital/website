@@ -107,11 +107,11 @@ export default function withAction() {
             target="_blank"
               variant={'solid'}
               colorScheme={'telegram'}
-              size={'md'}
+              size={'sm'}
               mr={4}
               leftIcon={<FaTelegram />}
             >
-              Unite al Grupo de Telegram
+              Unite a nuestro grupo de Telegram
             </Button>          
           </Flex>
         </Flex>
