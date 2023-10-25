@@ -9,7 +9,7 @@ export default function YoutubeVideo({videoId=""}) {
   }
 
   const opts: YouTubeProps['opts'] = {
-    height: '360',
+    height: '390',
     width: '100%',
     playerVars: {
       // https://developers.google.com/youtube/player_parameters

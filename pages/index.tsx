@@ -4,6 +4,8 @@ import Section from '../components/Section';
 import Person from '../components/Person';
 import LinkWithText from '../components/LinkWithText';
 import VideoCarousel from '../components/VideoCarousel';
+import BlogPostWithImage from '../components/Blog';
+import PostWithLike from '../components/Project';
 
 const YOUTUBE_PLAYLIST_ITEMS_API = 'https://www.googleapis.com/youtube/v3/playlistItems';
 
@@ -51,17 +53,15 @@ const IndexPage = () => (
     <Section
       title="Todo sobre diabetes"
       id='todo-sobre-diabetes'
-      texts={[
-        'Organizamos talleres gratuitos sobre distintos temas relacionados a la diabetes.',
-        'Algunos talleres son sobre distintas aplicaciones que se usan para el control de la diabetes, otros sobre tecnologías mas nuevas o simplemente para visibilizar sobre la condición.',
-        'Estos son algunos de nuestros talleres:',
-      ]}
       childrens={[
-        <VideoCarousel items ={['FU3X73w3vkQ','Ynhss8HQphA','l2KyKca25_8','ydNRvtp9uyw','P-bPLWTTCNc','6nZ1TuVTpRs']} />,      
+        <BlogPostWithImage />,      
+        <BlogPostWithImage />,      
+        <BlogPostWithImage />,      
+        <BlogPostWithImage />,      
+        <BlogPostWithImage />,      
+        <BlogPostWithImage />,      
       ]}
-      bottomChildrens={[
-        <LinkWithText text='Podés ver más videos en nuestro' link={{'text':'canal de Youtube','url':'https://www.youtube.com/c/PancreasDigital'}}></LinkWithText>
-      ]}
+      
     ></Section>
 
     <Section
@@ -83,8 +83,31 @@ const IndexPage = () => (
       ]}
     ></Section>
     <Section
+      title="Tutoriales y videos útiles"
+      id='tutoriales-videos-utiles'
+      texts={[
+        'Organizamos talleres gratuitos sobre distintos temas relacionados a la diabetes.',
+        'Algunos talleres son sobre distintas aplicaciones que se usan para el control de la diabetes, otros sobre tecnologías mas nuevas o simplemente para visibilizar sobre la condición.',
+        'Estos son algunos de nuestros talleres:',
+      ]}
+      childrens={[
+        <VideoCarousel items ={['FU3X73w3vkQ','Ynhss8HQphA','l2KyKca25_8','ydNRvtp9uyw','P-bPLWTTCNc','6nZ1TuVTpRs']} />,      
+      ]}
+      bottomChildrens={[
+        <LinkWithText text='Podés ver más videos en nuestro' link={{'text':'canal de Youtube','url':'https://www.youtube.com/c/PancreasDigital'}}></LinkWithText>
+      ]}
+    ></Section>
+    <Section
       title="Proyectos Open Source"
       id='proyectos-open-source'
+      childrens={[     
+        <PostWithLike />,      
+        <PostWithLike />,      
+        <PostWithLike />,      
+        <PostWithLike />,      
+        <PostWithLike />,      
+        <PostWithLike />,      
+      ]}
     ></Section>
   </Layout>
 );

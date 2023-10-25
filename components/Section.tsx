@@ -30,7 +30,7 @@ export default function Section({ childrens = [<div />],bottomChildrens = [<div 
       ))}
   
   <Grid templateColumns='repeat(10, 1fr)' gap={4}>
-  <GridItem colSpan={8}>
+  <GridItem colSpan={9}>
     <HStack display={{ sm: 'flex' }} alignItems="center" justify="center">
       <Wrap spacing="8" justify="center" alignItems="center">
       {
