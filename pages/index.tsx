@@ -2,8 +2,8 @@ import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import Section from '../components/Section';
 import Person from '../components/Person';
-import Video from '../components/Video';
 import LinkWithText from '../components/LinkWithText';
+import VideoCarousel from '../components/VideoCarousel';
 
 const YOUTUBE_PLAYLIST_ITEMS_API = 'https://www.googleapis.com/youtube/v3/playlistItems';
 
@@ -57,24 +57,7 @@ const IndexPage = () => (
         'Estos son algunos de nuestros talleres:',
       ]}
       childrens={[
-        <Video 
-        videoId="FU3X73w3vkQ"
-        />,
-        <Video 
-        videoId='Ynhss8HQphA'
-        />,      
-        <Video 
-        videoId='l2KyKca25_8'
-        />,      
-        <Video 
-        videoId='ydNRvtp9uyw'
-        />,      
-        <Video 
-        videoId='P-bPLWTTCNc'
-        />,      
-        <Video 
-        videoId='6nZ1TuVTpRs'
-        />,      
+        <VideoCarousel items ={['FU3X73w3vkQ','Ynhss8HQphA','l2KyKca25_8','ydNRvtp9uyw','P-bPLWTTCNc','6nZ1TuVTpRs']} />,      
       ]}
       bottomChildrens={[
         <LinkWithText text='Podés ver más videos en nuestro' link={{'text':'canal de Youtube','url':'https://www.youtube.com/c/PancreasDigital'}}></LinkWithText>
@@ -91,23 +74,8 @@ const IndexPage = () => (
       ]}
       
       childrens={[
-        <Video 
-        videoId="TVT02w7mG2E"
-        />,
-        <Video 
-        videoId='SQgZPO3DpcA'
-        />,      
-        <Video 
-        videoId='Cj6useTz4Ug'
-        />,      
-        <Video 
-        videoId='S5ccxmV4sHI'
-        />,      
-        <Video 
-        videoId='NBry6KO4vuw'
-        />,      
-        <Video 
-        videoId='w3GbR2MTikQ'
+        <VideoCarousel
+        items={['TVT02w7mG2E','SQgZPO3DpcA','Cj6useTz4Ug','S5ccxmV4sHI','NBry6KO4vuw','w3GbR2MTikQ']}
         />,      
       ]}
       bottomChildrens={[

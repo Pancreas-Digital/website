@@ -32,7 +32,7 @@ export default function Section({ childrens = [<div />],bottomChildrens = [<div 
   <Grid templateColumns='repeat(10, 1fr)' gap={4}>
   <GridItem colSpan={8}>
     <HStack display={{ sm: 'flex' }} alignItems="center" justify="center">
-      <Wrap spacing="1" justify="center" alignItems="center">
+      <Wrap spacing="8" justify="center" alignItems="center">
       {
         childrens.map(
           (children) => (
