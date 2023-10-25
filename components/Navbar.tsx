@@ -111,7 +111,7 @@ export default function withAction() {
               mr={4}
               leftIcon={<FaTelegram />}
             >
-              Unite a nuestro grupo de Telegram
+              Sumate a nuestro Telegram
             </Button>          
           </Flex>
         </Flex>
