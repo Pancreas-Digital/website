@@ -101,12 +101,12 @@ const IndexPage = () => (
       title="Proyectos Open Source"
       id='proyectos-open-source'
       childrens={[     
-        <PostWithLike />,      
-        <PostWithLike />,      
-        <PostWithLike />,      
-        <PostWithLike />,      
-        <PostWithLike />,      
-        <PostWithLike />,      
+        <PostWithLike tags={['android','java']} url='https://xdrip.readthedocs.io/en/latest/' link={{'text':'Descargar APK','url':'https://xdrip-plus-updates.appspot.com/stable/xdrip-plus-latest.apk'}} name='xDrip+' description='xDrip+ is an unofficial and independent Android app which works as data hub and processor between many different devices.' imgSrc='/xdrip-logo.webp'/>,      
+        <PostWithLike imgSrc='https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'/>,      
+        <PostWithLike imgSrc='https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'/>,      
+        <PostWithLike imgSrc='https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'/>,      
+        <PostWithLike imgSrc='https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'/>,      
+        <PostWithLike imgSrc=''/>,      
       ]}
     ></Section>
   </Layout>
