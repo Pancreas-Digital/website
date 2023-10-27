@@ -80,7 +80,7 @@ const IndexPage = () => (
         />,      
       ]}
       bottomChildrens={[
-        <LinkWithText text='Podés ver más videos en nuestro' link={{'text':'canal de Youtube','url':'https://www.youtube.com/c/PancreasDigital'}}></LinkWithText>
+        <LinkWithText text='Podés ver más videos en nuestro' link={{'text':'canal de Youtube','url':'https://youtube.com/@PancreasDigital'}}></LinkWithText>
       ]}
     ></Section>
     <Section
@@ -95,7 +95,7 @@ const IndexPage = () => (
         <VideoCarousel items ={['FU3X73w3vkQ','Ynhss8HQphA','l2KyKca25_8','ydNRvtp9uyw','P-bPLWTTCNc','6nZ1TuVTpRs']} />,      
       ]}
       bottomChildrens={[
-        <LinkWithText text='Podés ver más videos en nuestro' link={{'text':'canal de Youtube','url':'https://www.youtube.com/c/PancreasDigital'}}></LinkWithText>
+        <LinkWithText text='Podés ver más videos en nuestro' link={{'text':'canal de Youtube','url':'https://youtube.com/@PancreasDigital'}}></LinkWithText>
       ]}
     ></Section>
     <Section

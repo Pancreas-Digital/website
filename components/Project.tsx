@@ -1,6 +1,6 @@
 'use client'
 
-import {ReactNode, useState } from 'react'
+import {ReactNode} from 'react'
 import {
   Box,
   Heading,
@@ -15,7 +15,7 @@ import {
   Tooltip,
   Image
 } from '@chakra-ui/react'
-import { BsArrowUpRight, BsHeartFill, BsHeart, BsArrowDown } from 'react-icons/bs'
+import { BsArrowUpRight } from 'react-icons/bs'
 
 type Props = {
   imgSrc?: string;
