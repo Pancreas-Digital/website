@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import {ReactNode, useState } from 'react'
 import {
   Box,
   Heading,
@@ -11,18 +11,20 @@ import {
   useColorModeValue,
   HStack,
   Stack,
-  Badge
+  Badge,
+  Tooltip,
+  Image
 } from '@chakra-ui/react'
 import { BsArrowUpRight, BsHeartFill, BsHeart, BsArrowDown } from 'react-icons/bs'
-import Link from 'next/link';
 
 type Props = {
   imgSrc?: string;
   name?: string;
   url?:string;
-  link?: { text: string; url: string };
+  link?: { text: string; url: string;icon: ReactNode };
   description?: string;
   tags?: string[];
+  iconSrc?: string;
 };
 
 
@@ -30,11 +32,11 @@ export default function PostWithLike({
   imgSrc = '',
   name = '',
   url = '',
-  link = { text: '', url: '#' },
+  link = { text: '', url: '#',icon : <BsArrowUpRight /> },
   description = '',
   tags = [''],
+  iconSrc = '',
 }: Props) {
-  const [liked, setLiked] = useState(false)
 
   return (
     <Center py={6}>
@@ -46,16 +48,16 @@ export default function PostWithLike({
         overflow={'hidden'}
         bg="white"
         border={'1px'}
-        borderColor="black"
-        boxShadow={useColorModeValue('6px 6px 0 black', '6px 6px 0 cyan')}>
-        <Box h={'200px'} borderBottom={'1px'} borderColor="black">
+        borderColor="blue.600"
+        boxShadow={useColorModeValue('6px 6px 0 #2B6CB0', '6px 6px 0 #EBF8FF')}>
+        <Box h={'200px'} borderBottom={'1px'} borderColor="blue.600">
           <Img
             src={imgSrc}
             roundedTop={'sm'}
             objectFit="cover"
             h="full"
             w="full"
-            alt={'Blog Image'}
+            alt={name+' Image'}
           />
         </Box>
         <Box p={4}>
@@ -69,15 +71,18 @@ export default function PostWithLike({
           <Heading as='a' href={url} target={"_blank"} color={'blue.600'} fontSize={'2xl'} noOfLines={1}>
               {name}
           </Heading>
-          <Text color={'gray.500'} noOfLines={2} as='a' href={url} target={"_blank"}>
+          <Tooltip label={description} aria-label='A tooltip' placement='auto-start'>
+            <Text color={'gray.500'} noOfLines={2} as='a' href={url} target={"_blank"}>
             {description}
-          </Text>
+            </Text>
+          </Tooltip>
         </Box>
-        <HStack borderTop={'1px'} color="black">
+        <HStack borderTop={'1px'} color="blue.600">
           <Flex
             p={4}
             as='a'
             href={link.url}
+            target={"_blank"}
             alignItems="center"
             justifyContent={'space-between'}
             roundedBottom={'sm'}
@@ -86,7 +91,7 @@ export default function PostWithLike({
             <Text fontSize={'md'} fontWeight={'semibold'}>
               {link.text}
             </Text>
-            <BsArrowDown/>
+            {link.icon}
           </Flex>
         
           <Flex
@@ -95,13 +100,12 @@ export default function PostWithLike({
             justifyContent={'space-between'}
             roundedBottom={'sm'}
             borderLeft={'1px'}
-            cursor="pointer"
-            onClick={() => setLiked(!liked)}>
-            {liked ? (
-              <BsHeartFill fill="red" fontSize={'24px'} />
-            ) : (
-              <BsHeart fontSize={'24px'} />
-            )}
+          >  
+            <Image
+              w='25px'
+              src={iconSrc}
+              alt={name+' Icon'}
+            />
           </Flex>
         </HStack>
       </Box>
