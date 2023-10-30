@@ -1,5 +1,5 @@
 import { Box, Container, Stack, Text, useColorModeValue,Link, Image } from '@chakra-ui/react';
-import { FaFacebook, FaGithub, FaYoutube, FaInstagram, FaTelegram, FaLinkedin, FaBlogger } from 'react-icons/fa';
+import { FaFacebook, FaGithub, FaYoutube, FaInstagram, FaTelegram, FaLinkedin, FaBlogger, FaTiktok } from 'react-icons/fa';
 import SocialButton from '../components/SocialButton';
 
 export default function SmallWithSocial() {
@@ -38,6 +38,9 @@ export default function SmallWithSocial() {
           </SocialButton>
           <SocialButton label={'Facebook'} href={'https://www.facebook.com/PancreasDigital/'}>
             <FaFacebook />
+          </SocialButton>
+          <SocialButton label={'TikTok'} href={'https://www.tiktok.com/@pancreasdigital'}>
+            <FaTiktok />
           </SocialButton>
           <SocialButton label={'Github'} href={'https://github.com/Pancreas-Digital'}>
             <FaGithub />
