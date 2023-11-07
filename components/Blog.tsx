@@ -24,7 +24,7 @@ export default function BlogPostWithImage() {
         <Box h={'210px'} bg={'gray.100'} mt={-6} mx={-6} mb={6} pos={'relative'}>
           <Image
             src={
-              '/photo-1515378791036-0648a3ef77b2.avif'
+              '/HeroOriginal.jpeg'
             }
             fill
             alt="Example"

@@ -11,7 +11,7 @@ import {
   Stack,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon,} from '@chakra-ui/icons';
-import { FaTelegram } from 'react-icons/fa';
+import { FaYoutube } from 'react-icons/fa';
 
 const Links = [
   { text: 'Comunidad', url: '#comunidad', submenu: [] },
@@ -104,15 +104,15 @@ export default function withAction() {
           <Flex alignItems={'center'}>
             <Button
             as={'a'}
-            href={'https://t.me/+ahNWHtI3Lsg0YTNh'} 
+            href={'https://youtube.com/@PancreasDigital?sub_confirmation=1'} 
             target="_blank"
               variant={'solid'}
-              colorScheme={'telegram'}
+              colorScheme={'red'}
               size={'sm'}
               mr={4}
-              leftIcon={<FaTelegram />}
+              leftIcon={<FaYoutube />}
             >
-              Sumate a nuestro Telegram
+              Suscribite en Youtube
             </Button>          
           </Flex>
         </Flex>
