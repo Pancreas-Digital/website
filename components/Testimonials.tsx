@@ -157,11 +157,11 @@ export default function GridBlurredBackdrop() {
           fontFamily={'Inter'}
           fontWeight={'medium'}
           color={useColorModeValue('blue.500', 'blue.700')}>
-          Sumate a los{' '}
+          Sumate a las{' '}
           <chakra.strong color={useColorModeValue('blue.700', 'blue.500')}>
             1,000+
           </chakra.strong>{' '}
-          seguidores. Compartimos experiencias, consejos y las últimas novedades sobre tecnología aplicada a la diabetes.        
+          personas que ayudamos. Compartimos experiencias, consejos y las últimas novedades sobre tecnología aplicada a la diabetes.
           </chakra.h2>{' '} 
           <br />
           <Button
