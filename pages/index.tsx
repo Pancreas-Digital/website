@@ -4,7 +4,8 @@ import Section from '../components/Section';
 import Person from '../components/Person';
 import LinkWithText from '../components/LinkWithText';
 import VideoCarousel from '../components/VideoCarousel';
-import BlogPostWithImage from '../components/Blog';
+import GridBlurredBackdrop from '../components/Testimonials';
+ import BlogPostWithImage from '../components/Blog';
 import PostWithLike from '../components/Project';
 import { BsArrowUpRight, BsArrowDown } from 'react-icons/bs'
 
@@ -24,11 +25,11 @@ const IndexPage = () => (
   <Layout title="Pancreas Digital - Todo sobre tecnología aplicada a la diabetes">
     <Hero />
     <Section
-      id='quienes-somos'
-      title="Quienes somos"
+      id='comunidad'
+      title="Comunidad"
       texts={[
-        'Somos un grupo de padres que se conocieron por internet, debido a que nuestros hijos tienen diabetes. Compartimos las ganas de ayudar al otro.',
-        'Empezamos resolviendo dudas y consultas, relacionadas con tecnologías aplicadas a la diabetes, a través de redes sociales. Luego comenzamos a organizar talleres virtuales sobre estos temas. ',
+        'Conocé nuestras historias y sé parte de nuestra red de apoyo.',
+        'Somos una comunidad diversa y unida, enfrentando la diabetes juntos. Descubre historias inspiradoras y comparte la tuya.',
         'Todo lo hacemos sin fines de lucro.',
       ]}
       childrens={[
@@ -49,6 +50,7 @@ const IndexPage = () => (
           tags={['PSICOLOGÍA','XDRIP+','AAPS','DIY']}
           contact={{ text: 'Escribime', url: 'https://ig.me/m/cadapersonaunmundo' }}
         />,
+        <GridBlurredBackdrop />
       ]}
     ></Section>
     <Section
@@ -109,5 +111,39 @@ const IndexPage = () => (
     ></Section>
   </Layout>
 );
+/*
+Claro, aquí tienes un resumen de todas las secciones con sus nombres actualizados y los textos correspondientes:
 
+### 1. Inicio:
+"Explorá, aprendé y conectate."
+#### Carrusel de Imágenes:
+*Foto 1:* "Páncreas Digital: Tecnología y Apoyo. Tu aliado en el camino con la diabetes."
+*Foto 2:* "Innovación para Todos. Información, herramientas y comunidad."
+
+### 2. Comunidad:
+"Conocé nuestras historias y sé parte de nuestra red de apoyo."
+"Somos una comunidad diversa y unida, enfrentando la diabetes juntos. Descubre historias inspiradoras y comparte la tuya."
+
+### 3. Tecnología:
+"Descubrí las últimas herramientas y dispositivos."
+"Explora innovaciones tecnológicas que pueden hacer tu vida y la gestión de la diabetes más sencilla. Información práctica para todos."
+
+### 4. Blog:
+"Artículos, consejos y noticias para mantenerte al día."
+"Tu fuente de información actualizada, con consejos útiles, historias y las últimas noticias sobre diabetes y tecnología."
+
+### 5. Videos:
+"Tutoriales, reseñas y contenido valioso en video."
+"Aprendé con nuestros videos, encuentra reseñas honestas y conecta con nuestra comunidad visualmente."
+
+### 6. Eventos:
+"Participá en talleres y actividades interactivas."
+"Sumate a nuestros eventos y talleres. Espacios de aprendizaje y conexión con otros miembros de la comunidad."
+
+### 7. Apoyo Diario 🤝:
+"Materiales y soporte constante para ti."
+"Encuentra guías prácticas, materiales educativos y respuestas a tus preguntas frecuentes, todo en un solo lugar."
+
+Estas secciones y textos están diseñados para reflejar el tono amigable, inclusivo y de soporte constante que buscas transmitir en tu sitio web. ¡Espero que te sean útiles y ayuden a construir una comunidad fuerte y conectada!
+*/
 export default IndexPage;

@@ -14,7 +14,7 @@ import { HamburgerIcon, CloseIcon,} from '@chakra-ui/icons';
 import { FaTelegram } from 'react-icons/fa';
 
 const Links = [
-  { text: 'Quienes somos', url: '#quienes-somos', submenu: [] },
+  { text: 'Comunidad', url: '#comunidad', submenu: [] },
   {
     text: 'Todo sobre diabetes', url: '#todo-sobre-diabetes',
     submenu: [
