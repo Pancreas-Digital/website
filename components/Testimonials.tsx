@@ -103,7 +103,6 @@ function TestimonialCard(props: TestimonialCardProps) {
           <Tooltip label={content} aria-label='A tooltip' placement='auto-start'>
             {content.slice(0, 190)+'...'}
           </Tooltip>
-          
         </chakra.p>
         <chakra.p fontWeight={'bold'} fontSize={13}>
           {name}
