@@ -19,14 +19,6 @@ const testimonials = [
       '/Flag_of_Uruguay.svg.webp',
   },
   {
-    name: 'Krysta B.',
-    location: 'Entrepreneur',
-    content:
-      "I didn't even need training. We've used EEZY for the last five years. I have gotten at least 50 times the value from EEZY. I made back the purchase price in just 48 hours!",
-    avatar:
-      '/Flag_of_Chile.svg.webp',
-  },
-  {
     name: 'Xoco Osuna',
     location: 'Tijuana Baja California, México',
     content:
@@ -41,6 +33,14 @@ const testimonials = [
       'Él uso de tecnologías en él tratamiento de la diabetes mejoró ampliamente la calidad de vida de mi hijo de 7 años, y la mía cómo su mamá. Dani, fede y él canal de páncreas digital, fueron escenciales en mi aprendizaje.',
     avatar:
       '/Flag_of_Argentina.svg.webp',
+  },
+  {
+    name: 'Emmanuel Sánchez Tovar',
+    location: 'Guanacaste, Costa Rica',
+    content:
+      'Hola!  Mi nombre es Emmanuel y vivo con diabetes tipo 1 desde Junio del 2021! y desde el año pasado he  vivido mis mejores meses gracias al apoyo de la comunidad de diabetes y el acceso a tecnología de código abierto desarrollada por y para personas con diabetes! :) en específico, la aplicación AAPS hace posible conectar mi sensor de glucosa y bomba de insulina para manejar mi día a día! Si quieren aprender y saber más acerca de esta tecnología y muchos otros avances, té podes unir al grupo de Telegram de Páncreas digital! Gracias Dani y Fede.',
+    avatar:
+      '/Flag_of_Costa_Rica.svg.png',
   },
 ]
 
@@ -141,10 +141,10 @@ export default function GridBlurredBackdrop() {
         </chakra.h3>
         <chakra.h1
           py={5}
-          fontSize={48}
+          fontSize={36}
           fontWeight={'bold'}
           color={useColorModeValue('blue.500', 'blue.700')}>
-          Un espacio para todos.
+          Un espacio de todos, para todos.
         </chakra.h1>
         <chakra.h2
           margin={'auto'}
@@ -156,7 +156,7 @@ export default function GridBlurredBackdrop() {
           <chakra.strong color={useColorModeValue('blue.700', 'blue.500')}>
             1,000+
           </chakra.strong>{' '}
-          personas que ayudamos. Compartimos experiencias, consejos y las últimas novedades sobre tecnología aplicada a la diabetes.
+          personas que conforman nuestra comunidad. Compartimos experiencias, consejos y las últimas novedades sobre tecnología aplicada a la diabetes.
           </chakra.h2>{' '} 
           <br />
           <Button
