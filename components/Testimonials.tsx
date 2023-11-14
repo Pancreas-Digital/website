@@ -6,7 +6,6 @@ import {
   Flex,
   SimpleGrid,
   Tooltip,
-  Text,
   useColorModeValue,
 } from '@chakra-ui/react'
 import { FaTelegram } from 'react-icons/fa'
