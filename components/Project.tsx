@@ -63,7 +63,7 @@ export default function PostWithLike({
         <Box p={4}>
           <Stack align={'right'} justify={'right'} direction={'row'} mt={6}>
           {tags.map((tag) => (
-            <Badge rounded={'md'} bg="blue.300" px={2} py={1} color="white" fontWeight={'md'} fontSize={'xs'} >
+            <Badge key={tag} rounded={'md'} bg="blue.300" px={2} py={1} color="white" fontWeight={'md'} fontSize={'xs'} >
               {tag}
             </Badge>
           ))}

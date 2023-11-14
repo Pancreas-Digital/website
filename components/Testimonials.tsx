@@ -1,5 +1,3 @@
-'use client'
-
 import {
   Button,
   Image,
@@ -102,11 +100,10 @@ function TestimonialCard(props: TestimonialCardProps) {
       }}>
       <Flex direction={'column'} textAlign={'left'} justifyContent={'space-between'}>
         <chakra.p fontWeight={'medium'} fontSize={'13px'} pb={4}>
-        <Tooltip label={content} aria-label='A tooltip' placement='auto-start'>
-            <Text noOfLines={3}>
-            {content}
-            </Text>
+          <Tooltip label={content} aria-label='A tooltip' placement='auto-start'>
+            {content.slice(0, 190)+'...'}
           </Tooltip>
+          
         </chakra.p>
         <chakra.p fontWeight={'bold'} fontSize={13}>
           {name}

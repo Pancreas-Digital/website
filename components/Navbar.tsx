@@ -97,7 +97,8 @@ export default function withAction() {
               spacing={4}
               display={{ base: 'none', md: 'flex' }}>
               {Links.map((link) => (
-                <NavLink>{link}</NavLink>
+                <NavLink key={link.url
+                }>{link}</NavLink>
               ))}
             </HStack>
           </HStack>

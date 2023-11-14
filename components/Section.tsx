@@ -24,19 +24,19 @@ export default function Section({ childrens = [<div />],bottomChildrens = [<div 
         borderBottomColor="blue.50"
       />
       {texts.map((text) => (
-        <Text fontSize="20px" pt="2" color="blue.50" textColor="blue.600">
+        <Text key={text} fontSize="20px" pt="2" color="blue.50" textColor="blue.600">
           {text}
         </Text>
       ))}
   
   <Grid templateColumns='repeat(10, 1fr)' gap={4}>
   <GridItem colSpan={9}>
-    <HStack display={{ sm: 'flex' }} alignItems="center" justify="center">
+    <HStack key={id} display={{ sm: 'flex' }} alignItems="center" justify="center">
       <Wrap spacing="8" justify="center" alignItems="center">
       {
         childrens.map(
           (children) => (
-              <WrapItem padding="1">{children}</WrapItem>
+              <WrapItem key={new Date().valueOf()} padding="1">{children}</WrapItem>
           )
         )
       }
@@ -47,7 +47,7 @@ export default function Section({ childrens = [<div />],bottomChildrens = [<div 
       
       
       {bottomChildrens.map((children) => (
-      <HStack display={{ sm: 'flex' }} alignItems="left" justify="left">
+      <HStack key={id} display={{ sm: 'flex' }} alignItems="left" justify="left">
         <Wrap spacing="10" justify="left" alignItems="left">
             <WrapItem>{children}</WrapItem>
         </Wrap>
