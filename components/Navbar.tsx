@@ -26,7 +26,7 @@ const Links = [
   },
   { text: 'Talleres online', url: '#talleres-online', submenu: [] },
   { text: 'Tutoriales y videos útiles', url: '#tutoriales-videos-utiles', submenu: [] },
-  { text: 'Proyectos open source', url: '#proyectos-open-source', submenu: [] },
+  { text: 'Tecnología', url: '#tecnologia', submenu: [] },
 ];
 type Children = {
   text: string;
