@@ -8,6 +8,8 @@ import GridBlurredBackdrop from '../components/Testimonials';
  import BlogPostWithImage from '../components/Blog';
 import PostWithLike from '../components/Project';
 import { BsArrowUpRight, BsArrowDown } from 'react-icons/bs'
+import { url } from 'inspector';
+import { title } from 'process';
 
 const YOUTUBE_PLAYLIST_ITEMS_API = 'https://www.googleapis.com/youtube/v3/playlistItems';
 
@@ -100,11 +102,11 @@ const IndexPage = () => (
         "Mantenete siempre un paso adelante."
       ]}
       childrens={[
-        <BlogPostWithImage />,      
-        <BlogPostWithImage />,      
-        <BlogPostWithImage />,      
-        <BlogPostWithImage />,      
-        <BlogPostWithImage />,      
+        <BlogPostWithImage tags={['diagnostico','dbt1']} author={{'name':'Carolina Fariña','url':'https://www.blogger.com/profile/15849588606779421712','imgSrc':''}} post={{'title':'Se puede','url':'https://pancreasdigital.blogspot.com/2023/11/se-puede.html','imgSrc':'/Hero.png','text':'Soy Carolina, mamá de Valentino y Franco, vengo a contar algo de nuestra historia. El 22 de junio del 2020 mi vida se desmoronó por completo, diagnosticaron diabetes tipo 1 a mi bebé en aquel entonces, Franco. Internación sorpresiva y repentina, terapia por medio, pero lo que más miedo me causaba eran los nuevos términos que escuchaba... no tenía ni la más mínima idea de que es la diabetes y cómo se trata...','date':'Noviembre 2023'}} />,      
+        <BlogPostWithImage tags={['diagnostico','dbt1']} author={{'name':'Daniela','url':'https://www.blogger.com/profile/02702646986390029835','imgSrc':''}} post={{'title':'Ésta es mí historia','url':'https://pancreasdigital.blogspot.com/2023/11/esta-es-mi-historia.html','imgSrc':'/blog2.png','text':'Hola ¿Cómo están? Mi nombre  es Tomás, me dicen Tomi y tengo 9 años. Me encanta el fútbol  y el handball, mi color favorito es el violeta, me encanta Pokémon y Dragon Ball Z. Tengo diabetes tipo 1 desde los 4 años, voy a “Futbotín” con mi gran amigo que se llama Joel.','date':'Noviembre 2023'}} />,      
+        <BlogPostWithImage tags={['diagnostico','dbt1']} author={{'name':'Daniela','url':'','imgSrc':''}} post={{'title':'','url':'','imgSrc':'/blog3.jpeg','text':'','date':'Noviembre 2023'}} />,      
+        <BlogPostWithImage tags={['diagnostico','dbt1']} author={{'name':'Pablo Bardon','url':'','imgSrc':''}} post={{'title':'','url':'','imgSrc':'/blog4.jpeg','text':'','date':'Noviembre 2023'}} />,      
+        <BlogPostWithImage tags={['diagnostico','dbt1']} author={{'name':'Federico Nicolás Motta','url':'','imgSrc':''}} post={{'title':'','url':'','imgSrc':'/blog5.png','text':'','date':'Noviembre 2023'}} />,      
       ]}
       bottomChildrens={[
         <LinkWithText text='Podés ver más posteos en nuestro' link={{'text':'blog','url':'https://pancreasdigital.blogspot.com'}}></LinkWithText>

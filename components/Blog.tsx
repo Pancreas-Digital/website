@@ -4,12 +4,23 @@ import {
   Center,
   Heading,
   Text,
+  Badge,
   Stack,
   Avatar,
   useColorModeValue,
 } from '@chakra-ui/react'
 
-export default function BlogPostWithImage() {
+type Props = {
+  post?: { title: string; url: string; imgSrc: string;   text?: string; date?:string};
+  tags?: string[];
+  author?: { name: string; imgSrc: string; url: string; };
+};
+
+export default function BlogPostWithImage({
+  post = { title: '', url: '#',imgSrc:'', text:'', date:'' },
+  tags = [''],
+  author = { name: '', url: '#',imgSrc:'' },
+  }: Props) {
   return (
     <Center py={6}>
       <Box
@@ -21,42 +32,38 @@ export default function BlogPostWithImage() {
         rounded={'md'}
         p={6}
         overflow={'hidden'}>
-        <Box h={'210px'} bg={'gray.100'} mt={-6} mx={-6} mb={6} pos={'relative'}>
+        <Box h={'210px'} bg={'gray.100'} mt={-6} mx={-6} mb={6} pos={'relative'} >
           <Image
-            src={
-              '/HeroOriginal.jpeg'
-            }
+           objectFit='cover'
+            src={post.imgSrc}
             fill
-            alt="Example"
+            alt={post.title}
           />
         </Box>
-        <Stack>
-          <Text
-            color={'green.500'}
-            textTransform={'uppercase'}
-            fontWeight={800}
-            fontSize={'sm'}
-            letterSpacing={1.1}>
-            Blog
-          </Text>
+        <Stack as={'a'} href={post.url} target={"_blank"}>
+          <Stack align={'right'} justify={'right'} direction={'row'} mt={6}>
+          {tags.map((tag) => (
+            <Badge key={tag} rounded={'md'} bg="blue.300" px={2} py={1} color="white" fontWeight={'md'} fontSize={'xs'} >
+              {tag}
+            </Badge>
+          ))}
+          </Stack>
+        
           <Heading
-            // eslint-disable-next-line react-hooks/rules-of-hooks
-            color={useColorModeValue('gray.700', 'white')}
+            color={useColorModeValue('blue.600', 'white')}
             fontSize={'2xl'}
             fontFamily={'body'}>
-            Boost your conversion rate
+            {post.title}
           </Heading>
           <Text color={'gray.500'}>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-            eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-            voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+            {post.text}
           </Text>
         </Stack>
         <Stack mt={6} direction={'row'} spacing={4} align={'center'}>
-          <Avatar src={'https://avatars0.githubusercontent.com/u/1164541?v=4'} />
+          <Avatar src={author.imgSrc} as={"a"} href={author.url} target={"_blank"}/>
           <Stack direction={'column'} spacing={0} fontSize={'sm'}>
-            <Text fontWeight={600}>Achim Rolle</Text>
-            <Text color={'gray.500'}>Feb 08, 2021 · 6min read</Text>
+            <Text fontWeight={600} as={"a"} href={author.url} target={"_blank"}>{author.name}</Text>
+            <Text color={'gray.500'}>{post.date}</Text>
           </Stack>
         </Stack>
       </Box>
