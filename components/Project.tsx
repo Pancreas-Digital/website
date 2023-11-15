@@ -39,7 +39,7 @@ export default function PostWithLike({
 }: Props) {
 
   return (
-    <Center py={6}>
+    <Center py={1}>
       <Box
         w="xs"
         rounded={'sm'}
