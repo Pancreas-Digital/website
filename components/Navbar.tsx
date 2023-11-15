@@ -1,27 +1,24 @@
 import {
   Box,
   Flex,
-  Avatar,
   HStack,
   Image,
   Link,
   IconButton,
   Button,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuDivider,
   useDisclosure,
   useColorModeValue,
   Stack,
 } from '@chakra-ui/react';
-import { HamburgerIcon, CloseIcon, AddIcon } from '@chakra-ui/icons';
+import { HamburgerIcon, CloseIcon,} from '@chakra-ui/icons';
+import { FaYoutube } from 'react-icons/fa';
 
 const Links = [
-  { text: 'Quienes somos', url: '#quienes-somos', submenu: [] },
+  { text: 'Comunidad', url: '#comunidad', submenu: [] },
+  { text: 'Tecnología', url: '#tecnologia', submenu: [] },
+  { text: 'Talleres', url: '#talleres', submenu: [] },
   {
-    text: 'Todo sobre diabetes', url: '#todo-sobre-diabetes',
+    text: 'Blog', url: '#blog',
     submenu: [
       { text: 'En primera persona', url: '#en-primera-persona' },
       { text: 'Desde adentro', url: '#desde-adentro' },
@@ -29,9 +26,7 @@ const Links = [
       { text: 'Vida saludable', url: '#vida-saludable' },
       { text: 'Ciencia y tecnología', url: '#ciencia-y-tecnologia' }]
   },
-  { text: 'Talleres online', url: '#talleres-online', submenu: [] },
-  { text: 'Proyectos open source', url: '#proyectos-open-source', submenu: [] },
-  { text: 'Escribinos', url: '#escribinos', submenu: [] },
+  { text: 'Tutoriales', url: '#tutoriales', submenu: [] },
 ];
 type Children = {
   text: string;
@@ -102,41 +97,24 @@ export default function withAction() {
               spacing={4}
               display={{ base: 'none', md: 'flex' }}>
               {Links.map((link) => (
-                <NavLink>{link}</NavLink>
+                <NavLink key={link.url
+                }>{link}</NavLink>
               ))}
             </HStack>
           </HStack>
           <Flex alignItems={'center'}>
             <Button
+            as={'a'}
+            href={'https://youtube.com/@PancreasDigital?sub_confirmation=1'} 
+            target="_blank"
               variant={'solid'}
-              colorScheme={'blue'}
+              colorScheme={'red'}
               size={'sm'}
               mr={4}
-              leftIcon={<AddIcon />}
-              bgColor="blue.300"
-              _hover={{
-                textDecoration: 'none',
-                bgColor: useColorModeValue('blue.600', 'blue.600'),
-                textColor: useColorModeValue('blue.50', 'blue.50'),
-              }}
+              leftIcon={<FaYoutube />}
             >
-              Nightscout
-            </Button>
-            <Menu>
-              <MenuButton as={Button} rounded={'full'} variant={'link'} cursor={'pointer'} minW={0}>
-                <Avatar
-                  size={'sm'}
-                  src={
-                    'https://avatars.githubusercontent.com/u/250785?s=460&u=05cbfe945b76363071ea27c899549790218dc206&v=4'
-                  }
-                />
-              </MenuButton>
-              <MenuList>
-                <MenuItem>Mi perfil</MenuItem>
-                <MenuDivider />
-                <MenuItem>Cerrar sesión</MenuItem>
-              </MenuList>
-            </Menu>
+              Suscribite en Youtube
+            </Button>          
           </Flex>
         </Flex>
 

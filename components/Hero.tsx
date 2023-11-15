@@ -6,7 +6,7 @@ export default function WithBackgroundImage() {
       w={'full'}
       h={'100vh'}
       backgroundImage={
-        'url(Hero.png)'
+        'url(Illustrations.png)'
       }
       backgroundSize={'cover'}
       backgroundPosition={"center center"}
@@ -29,12 +29,12 @@ export default function WithBackgroundImage() {
             Todo sobre tecnología aplicada a la diabetes
           </Text>
           <Stack direction={'row'}>
-            <a href='#todo-sobre-diabetes'>
+            <a href='#blog'>
               <Button bg={'blue.300'} color={'white'} _hover={{ bg: 'blue.600' }}>
                 Quiero aprender más
               </Button>
             </a>
-            <a href='#talleres-online'>
+            <a href='#talleres'>
               <Button bg={'whiteAlpha.300'} color={'white'} _hover={{ bg: 'whiteAlpha.500' }}>
                 Mostrame los talleres
               </Button>

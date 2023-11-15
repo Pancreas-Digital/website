@@ -10,13 +10,15 @@ import {
   Badge,
   useColorModeValue,
 } from '@chakra-ui/react';
-import { EmailIcon } from '@chakra-ui/icons';
+import { ChatIcon} from '@chakra-ui/icons';
 type Props = {
   imgSrc?: string;
   name?: string;
   link?: { text: string; url: string };
   description?: string;
   tags?: string[];
+  contactText?: string;
+  contact?: { text: string; url: string };
 };
 
 export default function SocialProfileSimple({
@@ -25,6 +27,7 @@ export default function SocialProfileSimple({
   link = { text: '', url: '#' },
   description = '',
   tags = [''],
+  contact = { text: '', url: '#' },
 }: Props) {
   return (
     <Center py={6}>
@@ -40,7 +43,7 @@ export default function SocialProfileSimple({
         <Avatar
           size={'xl'}
           src={imgSrc}
-          alt={name}
+          title={name}
           mb={4}
           pos={'relative'}
           _after={{
@@ -69,7 +72,7 @@ export default function SocialProfileSimple({
 
         <Stack align={'center'} justify={'center'} direction={'row'} mt={6}>
           {tags.map((tag) => (
-            <Badge px={2} py={1} bg={useColorModeValue('gray.50', 'gray.800')} fontWeight={'400'}>
+            <Badge key={tag} px={2} py={1} bg={useColorModeValue('gray.50', 'gray.800')} fontWeight={'400'}>
               #{tag}
             </Badge>
           ))}
@@ -86,7 +89,8 @@ export default function SocialProfileSimple({
               flex={1}
               fontSize={'sm'}
               bgColor="blue.300"
-              href={'#escribinos'}
+              href={contact.url}
+              target={"_blank"}
               display={'inline-flex'}
               alignItems={'center'}
               justifyContent={'center'}
@@ -99,8 +103,8 @@ export default function SocialProfileSimple({
                 bg: 'blue.600',
               }}
             >
-              <EmailIcon marginRight="10px" />
-              Escribime
+              <ChatIcon marginRight="10px" />
+              {contact.text}
             </chakra.button>
           </Stack>
         </Stack>
