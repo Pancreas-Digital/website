@@ -59,7 +59,7 @@ export default function BlogPostWithImage({
             {post.text}
           </Text>
         </Stack>
-        <Stack mt={6} direction={'row'} spacing={4} align={'center'}>
+        <Stack mt={6} direction={'row'} spacing={4} align={'center'} color={useColorModeValue('blue.600', 'white')}>
           <Avatar src={author.imgSrc} as={"a"} href={author.url} target={"_blank"}/>
           <Stack direction={'column'} spacing={0} fontSize={'sm'}>
             <Text fontWeight={600} as={"a"} href={author.url} target={"_blank"}>{author.name}</Text>
