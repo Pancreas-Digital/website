@@ -15,8 +15,10 @@ import { FaYoutube } from 'react-icons/fa';
 
 const Links = [
   { text: 'Comunidad', url: '#comunidad', submenu: [] },
+  { text: 'Tecnología', url: '#tecnologia', submenu: [] },
+  { text: 'Talleres', url: '#talleres', submenu: [] },
   {
-    text: 'Todo sobre diabetes', url: '#todo-sobre-diabetes',
+    text: 'Blog', url: '#blog',
     submenu: [
       { text: 'En primera persona', url: '#en-primera-persona' },
       { text: 'Desde adentro', url: '#desde-adentro' },
@@ -24,9 +26,7 @@ const Links = [
       { text: 'Vida saludable', url: '#vida-saludable' },
       { text: 'Ciencia y tecnología', url: '#ciencia-y-tecnologia' }]
   },
-  { text: 'Talleres online', url: '#talleres-online', submenu: [] },
-  { text: 'Tutoriales y videos útiles', url: '#tutoriales-videos-utiles', submenu: [] },
-  { text: 'Tecnología', url: '#tecnologia', submenu: [] },
+  { text: 'Tutoriales', url: '#tutoriales', submenu: [] },
 ];
 type Children = {
   text: string;

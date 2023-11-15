@@ -53,51 +53,6 @@ const IndexPage = () => (
       ]}
     ></Section>
     <Section
-      title="Todo sobre diabetes"
-      id={'todo-sobre-diabetes'}
-      childrens={[
-        <BlogPostWithImage />,      
-        <BlogPostWithImage />,      
-        <BlogPostWithImage />,      
-        <BlogPostWithImage />,      
-        <BlogPostWithImage />,      
-        <BlogPostWithImage />,      
-      ]}
-      
-    ></Section>
-
-    <Section
-      title="Talleres Online"
-      id={'talleres-online'}
-      texts={[
-        'Organizamos talleres gratuitos sobre distintos temas relacionados a la diabetes.',
-        'Algunos talleres son sobre distintas aplicaciones que se usan para el control de la diabetes, otros sobre tecnologías mas nuevas o simplemente para visibilizar sobre la condición.',
-        'Estos son algunos de nuestros talleres:',
-      ]}
-      
-      childrens={[
-        <VideoCarousel
-        items={['TVT02w7mG2E','SQgZPO3DpcA','Cj6useTz4Ug','S5ccxmV4sHI','NBry6KO4vuw','w3GbR2MTikQ']}
-        />,      
-      ]}
-      bottomChildrens={[
-        <LinkWithText text='Podés ver más videos en nuestro' link={{'text':'canal de Youtube','url':'https://youtube.com/@PancreasDigital'}}></LinkWithText>
-      ]}
-    ></Section>
-    <Section
-      title="Tutoriales y videos útiles"
-      id={'tutoriales-videos-utiles'}
-      texts={[
-        'Estos son nuestros tutoriales y videos útiles más vistos:',
-      ]}
-      childrens={[
-        <VideoCarousel items ={['FU3X73w3vkQ','Ynhss8HQphA','l2KyKca25_8','ydNRvtp9uyw','P-bPLWTTCNc','6nZ1TuVTpRs']} />,      
-      ]}
-      bottomChildrens={[
-        <LinkWithText text='Podés ver más videos en nuestro' link={{'text':'canal de Youtube','url':'https://youtube.com/@PancreasDigital'}}></LinkWithText>
-      ]}
-    ></Section>
-    <Section
       title="Tecnología"
       id={'tecnologia'}
       texts={[
@@ -117,6 +72,56 @@ const IndexPage = () => (
         <PostWithLike tags={['IPhone','Android']} url='https://www.freestyle.abbott/' name='FreeStyle Libre' description='El sensor FreeStyle Libre es discreto y fácil de usar. Se aplica en la parte posterior superior del brazo y realiza lecturas de glucosa automáticamente cada un minuto.' imgSrc='/freestyle-screenshot.jpeg' iconSrc='/freestyle-logo.png' link={{'text':'Comprar el dispositivo','url':'https://www.freestyle.abbott/ar-es/home/donde-comprar.html', 'icon':<BsArrowUpRight/>}}/>,      
         <PostWithLike tags={['IPhone','Android']} url='https://www.dexcom.com/es-ar' name='Dexcom ONE' description='Dexcom ONE es una forma más inteligente, eficaz y fácil de controlar la diabetes.' imgSrc='/dexcom-screenshot.webp' iconSrc='/dexcom-logo.png' link={{'text':'Ver más','url':'https://www.dexcom.com/es-ar/dexcom-one', 'icon':<BsArrowUpRight/>}}/>,
     ]}
+    ></Section>
+    <Section
+      title="Talleres online y presenciales"
+      id={'talleres'}
+      texts={[
+        'Organizamos talleres gratuitos sobre distintos temas relacionados a la diabetes. Virtuales y presenciales.',
+        'Algunos talleres son sobre distintas aplicaciones que se usan para el control de la diabetes, otros sobre tecnologías mas nuevas o simplemente para visibilizar sobre la condición.',
+        'Estos son algunos de nuestros talleres:',
+      ]}
+      
+      childrens={[
+        <VideoCarousel
+        items={['TVT02w7mG2E','SQgZPO3DpcA','Cj6useTz4Ug','S5ccxmV4sHI','NBry6KO4vuw','w3GbR2MTikQ']}
+        />,      
+      ]}
+      bottomChildrens={[
+        <LinkWithText text='Podés ver más videos en nuestro' link={{'text':'canal de Youtube','url':'https://youtube.com/@PancreasDigital'}}></LinkWithText>
+      ]}
+    ></Section>
+    <Section
+      title="Nuestro Blog"
+      id={'blog'}
+      texts={[
+        "Actualizate con lo último en diabetes y tecnología.",
+        "Nuestro blog es un espacio donde compartimos noticias, consejos y todo lo que necesitás saber sobre tecnología y diabetes.", 
+        "Mantenete siempre un paso adelante."
+      ]}
+      childrens={[
+        <BlogPostWithImage />,      
+        <BlogPostWithImage />,      
+        <BlogPostWithImage />,      
+        <BlogPostWithImage />,      
+        <BlogPostWithImage />,      
+      ]}
+      bottomChildrens={[
+        <LinkWithText text='Podés ver más posteos en nuestro' link={{'text':'blog','url':'https://pancreasdigital.blogspot.com'}}></LinkWithText>
+      ]} 
+    ></Section>
+    <Section
+      title="Tutoriales y videos útiles"
+      id={'tutoriales'}
+      texts={[
+        'Estos son nuestros tutoriales y videos útiles más vistos:',
+      ]}
+      childrens={[
+        <VideoCarousel items ={['FU3X73w3vkQ','Ynhss8HQphA','l2KyKca25_8','ydNRvtp9uyw','P-bPLWTTCNc','6nZ1TuVTpRs']} />,      
+      ]}
+      bottomChildrens={[
+        <LinkWithText text='Podés ver más videos en nuestro' link={{'text':'canal de Youtube','url':'https://youtube.com/@PancreasDigital'}}></LinkWithText>
+      ]}
     ></Section>
   </Layout>
 );
