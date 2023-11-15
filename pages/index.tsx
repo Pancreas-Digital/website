@@ -8,8 +8,6 @@ import GridBlurredBackdrop from '../components/Testimonials';
  import BlogPostWithImage from '../components/Blog';
 import PostWithLike from '../components/Project';
 import { BsArrowUpRight, BsArrowDown } from 'react-icons/bs'
-import { url } from 'inspector';
-import { title } from 'process';
 
 const YOUTUBE_PLAYLIST_ITEMS_API = 'https://www.googleapis.com/youtube/v3/playlistItems';
 
