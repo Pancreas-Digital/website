@@ -16,6 +16,8 @@ type Props = {
 const Layout = ({children}: Props) => (
   <ChakraProvider theme={theme}>
     <Head>
+      <meta charSet="utf-8" />
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-XR9HVSZTNT" />
       <script
         dangerouslySetInnerHTML={{
@@ -38,7 +40,7 @@ const Layout = ({children}: Props) => (
       <meta name="twitter:image:alt" content={process.env.twitterImageAlt} />
       <meta name="twitter:site" content={process.env.twitterSite} />
     </Head>
-    <Box bg="blue.50" minHeight="100vh">
+    <Box bg="blue.50" minHeight="100vh" overflowX={'hidden'}>
       <Navbar />
       <Box minHeight="91vh" textColor="blue.50">
         {children}

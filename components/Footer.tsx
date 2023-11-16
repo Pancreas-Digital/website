@@ -4,7 +4,7 @@ import SocialButton from '../components/SocialButton';
 
 export default function SmallWithSocial() {
   return (
-    <Box bg={useColorModeValue('blue.300', 'blue.600')} color={useColorModeValue('blue.50', 'blue.600')}>
+    <Box bg={useColorModeValue('blue.300', 'blue.600')} color={useColorModeValue('blue.50', 'blue.600')} overflowX={'hidden'}>
       <Container
         as={Stack}
         maxW={'90%'}
