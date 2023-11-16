@@ -11,14 +11,11 @@ import theme from '../theme.fonts';
 
 type Props = {
   children?: ReactNode;
-  title?: string;
 };
 
-const Layout = ({ children, title = 'Pancreas Digital - Todo sobre tecnología aplicada a la diabetes' }: Props) => (
+const Layout = ({children}: Props) => (
   <ChakraProvider theme={theme}>
     <Head>
-      <meta charSet="utf-8" />
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-XR9HVSZTNT" />
       <script
         dangerouslySetInnerHTML={{
