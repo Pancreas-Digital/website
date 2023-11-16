@@ -6,7 +6,7 @@ export default function WithBackgroundImage() {
       w={'full'}
       h={'100vh'}
       backgroundImage={
-        'url(Illustrations.png)'
+        'url(Illustrations.jpg)'
       }
       backgroundSize={'cover'}
       backgroundPosition={"center center"}
