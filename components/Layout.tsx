@@ -40,9 +40,9 @@ const Layout = ({children}: Props) => (
       <meta name="twitter:image:alt" content={process.env.twitterImageAlt} />
       <meta name="twitter:site" content={process.env.twitterSite} />
     </Head>
-    <Box bg="blue.50" minHeight="100vh" overflowX={'hidden'}>
+    <Box bg="blue.50" minHeight="100vh">
       <Navbar />
-      <Box minHeight="91vh" textColor="blue.50">
+      <Box minHeight="91vh" textColor="blue.50" overflowX={'hidden'}>
         {children}
       </Box>
     </Box>

@@ -71,7 +71,7 @@ export default function withAction() {
        borderWidth='2px'
        bg={useColorModeValue('blue.50', 'blue.600')}
        px={4}
-       sx={{ position: 'sticky', top: '0', 'z-index': '1000' }}
+       sx={{ position: 'sticky', top: '0', 'z-index': '1000','overflowX': 'hidden'  }}
       >
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
