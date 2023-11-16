@@ -80,6 +80,7 @@ export default function withAction() {
             aria-label={'Open Menu'}
             display={{ md: 'none' }}
             onClick={isOpen ? onClose : onOpen}
+            backgroundColor={'blue.50'}
           />
           <HStack spacing={8} alignItems={'center'}>
             <Link href='#intro'>

@@ -19,7 +19,8 @@ export default function WithBackgroundImage() {
         px={useBreakpointValue({ base: 4, md: 8 })}
         bgGradient={'linear(to-r, blackAlpha.600, transparent)'}
       >
-        <Stack maxW={'2xl'} align={'flex-start'} spacing={6}>
+        <Stack align={'flex-start'} spacing={6} maxW={'90%'}
+>
           <Text
             color={'white'}
             fontWeight={700}
@@ -29,16 +30,12 @@ export default function WithBackgroundImage() {
             Todo sobre tecnología aplicada a la diabetes
           </Text>
           <Stack direction={'row'}>
-            <a href='#blog'>
-              <Button bg={'blue.300'} color={'white'} _hover={{ bg: 'blue.600' }}>
+              <Button as='a' href='#blog' bg={'blue.300'} color={'white'} _hover={{ bg: 'blue.600' }}>
                 Quiero aprender más
               </Button>
-            </a>
-            <a href='#talleres'>
-              <Button bg={'whiteAlpha.300'} color={'white'} _hover={{ bg: 'whiteAlpha.500' }}>
+              <Button as='a' href='#talleres' bg={'whiteAlpha.300'} color={'white'} _hover={{ bg: 'whiteAlpha.500' }}>
                 Mostrame los talleres
               </Button>
-            </a>
           </Stack>
         </Stack>
       </VStack>
