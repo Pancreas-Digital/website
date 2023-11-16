@@ -11,19 +11,38 @@ import theme from '../theme.fonts';
 
 type Props = {
   children?: ReactNode;
-  title?: string;
 };
 
-const Layout = ({ children, title = 'Pancreas Digital - Todo sobre tecnología aplicada a la diabetes' }: Props) => (
+const Layout = ({children}: Props) => (
   <ChakraProvider theme={theme}>
     <Head>
-      <title>{title}</title>
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-XR9HVSZTNT" />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-XR9HVSZTNT');
+      `,
+        }}
+      />
+      <title>{process.env.siteTitle}</title>
+
+      <meta property="og:title" content={process.env.siteTitle} />
+      <meta property="og:description" content={process.env.siteDescription} />
+      <meta property="og:image" content={process.env.siteUrl + '/' + process.env.siteLogo} />
+      <meta property="og:url" content={process.env.siteUrl} />
+      <meta property="og:site_name" content={process.env.siteName} />
+      <meta name="twitter:card" content={process.env.twitterCard} />
+      <meta name="twitter:image:alt" content={process.env.twitterImageAlt} />
+      <meta name="twitter:site" content={process.env.twitterSite} />
     </Head>
     <Box bg="blue.50" minHeight="100vh">
       <Navbar />
-      <Box minHeight="91vh" textColor="blue.50">
+      <Box minHeight="91vh" textColor="blue.50" overflowX={'hidden'}>
         {children}
       </Box>
     </Box>

@@ -7,7 +7,7 @@ export default function SmallWithSocial() {
     <Box bg={useColorModeValue('blue.300', 'blue.600')} color={useColorModeValue('blue.50', 'blue.600')}>
       <Container
         as={Stack}
-        maxW={'6xl'}
+        maxW={'90%'}
         py={4}
         direction={{ base: 'column', md: 'row' }}
         spacing={4}
@@ -17,8 +17,8 @@ export default function SmallWithSocial() {
         <Link href={'/'} title="Pancreas Digital Home">
           <Image boxSize="150px" maxHeight="50px" objectFit="cover" src="Horizontal.png" alt="Diabetes Circle Logo" />
         </Link>
-        <Text>© 2021 Pancreas Digital. Todos los derechos reservados</Text>
-        <Stack direction={'row'} spacing={6}>
+        <Text>© 2023 Pancreas Digital. Todos los derechos reservados</Text>
+        <Stack direction={'row'} spacing={1}>
         <SocialButton label={'YouTube'} href={'https://youtube.com/@PancreasDigital'}>
             <FaYoutube />
           </SocialButton>

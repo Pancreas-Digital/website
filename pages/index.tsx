@@ -21,7 +21,7 @@ export async function getServerSideProps() {
   }
 }
 const IndexPage = () => (
-  <Layout title="Pancreas Digital - Todo sobre tecnología aplicada a la diabetes">
+  <Layout>
     <Hero />
     <Section
       id={'comunidad'}
