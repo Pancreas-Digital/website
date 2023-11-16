@@ -29,11 +29,11 @@ export default function WithBackgroundImage() {
           >
             Todo sobre tecnología aplicada a la diabetes
           </Text>
-          <Stack direction={'row'}>
-              <Button as='a' href='#blog' bg={'blue.300'} color={'white'} _hover={{ bg: 'blue.600' }}>
+          <Stack direction={'row'} >
+              <Button as='a' href='#blog' bg={'blue.300'} color={'white'} _hover={{ bg: 'blue.600' }}  fontSize={useBreakpointValue({ base: 'xs', md: 'md' })}>
                 Quiero aprender más
               </Button>
-              <Button as='a' href='#talleres' bg={'whiteAlpha.300'} color={'white'} _hover={{ bg: 'whiteAlpha.500' }}>
+              <Button as='a' href='#talleres' bg={'whiteAlpha.300'} color={'white'} _hover={{ bg: 'whiteAlpha.500' }} fontSize={useBreakpointValue({ base: 'xs', md: 'md' })}>
                 Mostrame los talleres
               </Button>
           </Stack>

@@ -17,7 +17,7 @@ export default function SmallWithSocial() {
         <Link href={'/'} title="Pancreas Digital Home">
           <Image boxSize="150px" maxHeight="50px" objectFit="cover" src="Horizontal.png" alt="Diabetes Circle Logo" />
         </Link>
-        <Text>© 2021 Pancreas Digital. Todos los derechos reservados</Text>
+        <Text>© 2023 Pancreas Digital. Todos los derechos reservados</Text>
         <Stack direction={'row'} spacing={1}>
         <SocialButton label={'YouTube'} href={'https://youtube.com/@PancreasDigital'}>
             <FaYoutube />
