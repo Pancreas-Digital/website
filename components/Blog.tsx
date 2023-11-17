@@ -24,9 +24,7 @@ export default function BlogPostWithImage({
   return (
     <Center py={6}>
       <Box
-        maxW={'345px'}
-        w={'full'}
-        // eslint-disable-next-line react-hooks/rules-of-hooks
+        w="xs"
         bg={useColorModeValue('white', 'gray.900')}
         boxShadow={'2xl'}
         rounded={'md'}

@@ -77,9 +77,9 @@ const IndexPage = () => (
       title="Talleres online y presenciales"
       id={'talleres'}
       texts={[
-        'Organizamos talleres gratuitos sobre distintos temas relacionados a la diabetes. Virtuales y presenciales.',
-        'Algunos talleres son sobre distintas aplicaciones que se usan para el control de la diabetes, otros sobre tecnologías mas nuevas o simplemente para visibilizar sobre la condición.',
-        'Estos son algunos de nuestros talleres:',
+        'No te pierdas nuestros talleres y eventos sobre tecnología y diabetes.',
+        'Eventos en vivo (virtuales y presenciales) para aprender y compartir cómo la tecnología puede ayudarte con la diabetes.',
+        'Aprendé y conocé gente que está en la misma que vos.',
       ]}
       
       childrens={[
@@ -114,7 +114,9 @@ const IndexPage = () => (
       title="Tutoriales y videos útiles"
       id={'tutoriales'}
       texts={[
-        'Estos son nuestros tutoriales y videos útiles más vistos:',
+        'Aprendé con nuestros videos.',
+        'Todo lo que necesitás saber sobre tecnología y diabetes, explicado simple y claro.',
+        'Mirá nuestros tutoriales y reseñas.'
       ]}
       childrens={[
         <VideoCarousel items ={['FU3X73w3vkQ','Ynhss8HQphA','l2KyKca25_8','ydNRvtp9uyw','P-bPLWTTCNc','6nZ1TuVTpRs']} />,      
