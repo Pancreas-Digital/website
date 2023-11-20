@@ -8,19 +8,72 @@ import GridBlurredBackdrop from '../components/Testimonials';
  import BlogPostWithImage from '../components/Blog';
 import PostWithLike from '../components/Project';
 import { BsArrowUpRight, BsArrowDown } from 'react-icons/bs'
+import axios from 'axios';
+import { GetStaticProps } from 'next';
 
-const YOUTUBE_PLAYLIST_ITEMS_API = 'https://www.googleapis.com/youtube/v3/playlistItems';
+type YouTubeVideoSnippet = {
+  resourceId: {
+    videoId: string;
+  };
+  title: string;
+};
 
-export async function getServerSideProps() {
-  const res = await fetch(`${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&maxResults=50&playlistId=PLpRCplanZUGdxMODznBwjIQNZg0HeJdww&key=${process.env.YOUTUBE_API_KEY}`)
-  const videos = await res.json();
-  return {
-      props: {
-          videos
-      }
+type YouTubeApiResponse = {
+  items: {
+    snippet: YouTubeVideoSnippet;
+  }[];
+};
+
+type VideoItem = {
+  videoId: string;
+};
+
+type Props = {
+  workshopsVideoIds: VideoItem[];
+  tutorialsVideoIds: VideoItem[];
+  microsVideoIds: VideoItem[];
+};
+
+const fetchPlaylistVideoIds = async (playlistId: string, apiKey: string, maxVideos:number): Promise<VideoItem[]> => {
+  const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${playlistId}&maxResults=${maxVideos}&key=${apiKey}`;
+
+  try {
+    const response = await axios.get<YouTubeApiResponse>(url);
+    return response.data.items.map(item => ({
+      videoId: item.snippet.resourceId.videoId,
+    }));
+  } catch (error) {
+    console.error('Error fetching playlist videos:', error);
+    return [];
   }
-}
-const IndexPage = () => (
+};
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const apiKey = process.env.YOUTUBE_API_KEY as string;
+  const maxVideos = 50 as number;
+  const workshopsPlaylistId = 'PLpRCplanZUGdxMODznBwjIQNZg0HeJdww';
+  const tutorialsPlaylistId = 'PLpRCplanZUGe4wrdCUOfzSKrW1bJlwSk3';
+  const microsPlaylistId = 'PLpRCplanZUGf5YaI5VMhfx81h8EaQ2qy3';
+
+  // Simultaneously fetch videos from all playlists
+  const [workshopsVideoIds, tutorialsVideoIds, microsVideoIds] = await Promise.all([
+    fetchPlaylistVideoIds(workshopsPlaylistId, apiKey,maxVideos),
+    fetchPlaylistVideoIds(tutorialsPlaylistId, apiKey,maxVideos),
+    fetchPlaylistVideoIds(microsPlaylistId, apiKey,maxVideos),
+  ]);
+
+  // Return the lists of video IDs as props
+  return {
+    props: {
+      workshopsVideoIds,
+      tutorialsVideoIds,
+      microsVideoIds,
+    },
+    // Revalidate at most once every hour if there's new content
+    revalidate: 3600,
+  };
+};
+const IndexPage  = ({workshopsVideoIds={},tutorialsVideoIds={},microsVideoIds={}}) => (
   <Layout>
     <Hero />
     <Section
@@ -28,10 +81,11 @@ const IndexPage = () => (
       title="Comunidad"
       texts={[
         'Conocé nuestras historias y sé parte de nuestra red de apoyo.',
-        'Somos una comunidad diversa y unida, enfrentando la diabetes juntos. Descubre historias inspiradoras y comparte la tuya.',
+        'Somos una comunidad diversa y unida, gestionando la diabetes juntos. Descubre historias inspiradoras y comparte la tuya.',
         'Todo lo hacemos sin fines de lucro.',
       ]}
       childrens={[
+        <GridBlurredBackdrop />,
         <Person
           imgSrc="fedemotta.jpeg"
           name="Federico Nicolás Motta"
@@ -49,7 +103,6 @@ const IndexPage = () => (
           tags={['PSICOLOGÍA','XDRIP+','AAPS','DIY']}
           contact={{ text: 'Escribime', url: 'https://ig.me/m/cadapersonaunmundo' }}
         />,
-        <GridBlurredBackdrop />
       ]}
     ></Section>
     <Section
@@ -77,14 +130,14 @@ const IndexPage = () => (
       title="Talleres online y presenciales"
       id={'talleres'}
       texts={[
-        'Organizamos talleres gratuitos sobre distintos temas relacionados a la diabetes. Virtuales y presenciales.',
-        'Algunos talleres son sobre distintas aplicaciones que se usan para el control de la diabetes, otros sobre tecnologías mas nuevas o simplemente para visibilizar sobre la condición.',
-        'Estos son algunos de nuestros talleres:',
+        'No te pierdas nuestros talleres y eventos sobre tecnología y diabetes.',
+        'Eventos en vivo (virtuales y presenciales) para aprender y compartir cómo la tecnología puede ayudarte con la diabetes.',
+        'Aprendé y conocé gente que está en la misma que vos.',
       ]}
       
       childrens={[
         <VideoCarousel
-        items={['TVT02w7mG2E','SQgZPO3DpcA','Cj6useTz4Ug','S5ccxmV4sHI','NBry6KO4vuw','w3GbR2MTikQ']}
+        items={workshopsVideoIds as VideoItem[]}
         />,      
       ]}
       bottomChildrens={[
@@ -114,10 +167,14 @@ const IndexPage = () => (
       title="Tutoriales y videos útiles"
       id={'tutoriales'}
       texts={[
-        'Estos son nuestros tutoriales y videos útiles más vistos:',
+        'Aprendé con nuestros videos.',
+        'Todo lo que necesitás saber sobre tecnología y diabetes, explicado simple y claro.',
+        'Mirá nuestros tutoriales y reseñas más vistos.'
       ]}
       childrens={[
-        <VideoCarousel items ={['FU3X73w3vkQ','Ynhss8HQphA','l2KyKca25_8','ydNRvtp9uyw','P-bPLWTTCNc','6nZ1TuVTpRs']} />,      
+        <VideoCarousel items ={tutorialsVideoIds as VideoItem[]} />,        
+        <LinkWithText text='Por la semana del dia Mundial de la Diabetes subimos una serie de micros, dedicados a tecnologías aplicadas a la diabetes, donde estuvimos hablando de un sistema de páncreas artificial llamado Android APS' link={{'text':'Micros de Android APIS','url':'https://www.youtube.com/playlist?list=PLpRCplanZUGf5YaI5VMhfx81h8EaQ2qy3'}}></LinkWithText>,
+        <VideoCarousel items ={microsVideoIds as VideoItem[]} />,      
       ]}
       bottomChildrens={[
         <LinkWithText text='Podés ver más videos en nuestro' link={{'text':'canal de Youtube','url':'https://youtube.com/@PancreasDigital'}}></LinkWithText>

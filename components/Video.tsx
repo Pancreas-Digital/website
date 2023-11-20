@@ -5,13 +5,16 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import YoutubeVideo from './YoutubeVideo';
+type VideoItem = {
+  videoId: string;
+};
 type Props = {
-  videoId?: string;
+  video: VideoItem;
   name?: string;
 };
 
 export default function Video({
-  videoId = '',
+  video = {videoId:''},
   name = '',
 }: Props) {
   return (
@@ -24,7 +27,7 @@ export default function Video({
         p={2}
         textAlign={'center'}
       >
-        <YoutubeVideo videoId={videoId}/>
+        <YoutubeVideo videoId={video.videoId}/>
         <Heading fontSize={'2xl'} fontFamily={'body'} color="blue.600">
           {name}
         </Heading>

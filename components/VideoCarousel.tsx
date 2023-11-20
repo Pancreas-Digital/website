@@ -2,12 +2,14 @@ import { Box, Flex, Button } from '@chakra-ui/react';
 import { useState } from 'react';
 import Video from '../components/Video';
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
-
+type VideoItem = {
+  videoId: string;
+};
 type Props = {
-  items?: string[];
+  items: VideoItem[];
 };
 
-const VideoCarousel = ({ items = [''] }: Props) => {
+const VideoCarousel = ({ items = [{videoId:''}] }: Props) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {
@@ -42,7 +44,7 @@ const VideoCarousel = ({ items = [''] }: Props) => {
         overflow="hidden"
         m={{ base: 2, md: 0 }}
       >
-        <Video videoId={items[currentIndex]} />
+        <Video video={items[currentIndex]} />
       </Box>
       <Button
         rightIcon={<ChevronRightIcon />}
