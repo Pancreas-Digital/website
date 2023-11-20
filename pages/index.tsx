@@ -85,6 +85,7 @@ const IndexPage  = ({workshopsVideoIds={},tutorialsVideoIds={},microsVideoIds={}
         'Todo lo hacemos sin fines de lucro.',
       ]}
       childrens={[
+        <GridBlurredBackdrop />,
         <Person
           imgSrc="fedemotta.jpeg"
           name="Federico Nicolás Motta"
@@ -102,7 +103,6 @@ const IndexPage  = ({workshopsVideoIds={},tutorialsVideoIds={},microsVideoIds={}
           tags={['PSICOLOGÍA','XDRIP+','AAPS','DIY']}
           contact={{ text: 'Escribime', url: 'https://ig.me/m/cadapersonaunmundo' }}
         />,
-        <GridBlurredBackdrop />
       ]}
     ></Section>
     <Section
