@@ -152,13 +152,6 @@ export default function GridBlurredBackdrop() {
           fontFamily={'Inter'}
           fontWeight={'medium'}
           color={useColorModeValue('blue.500', 'blue.700')}>
-          Sumate a las{' '}
-          <chakra.strong color={useColorModeValue('blue.700', 'blue.500')}>
-            1,000+
-          </chakra.strong>{' '}
-          personas que conforman nuestra comunidad. Compartimos experiencias, consejos y las últimas novedades sobre tecnología aplicada a la diabetes.
-          </chakra.h2>{' '} 
-          <br />
           <Button
             as={'a'}
             href={'https://t.me/+ahNWHtI3Lsg0YTNh'} 
@@ -171,6 +164,13 @@ export default function GridBlurredBackdrop() {
             >
               Sumate a nuestro Telegram
             </Button>{' '}       
+            <br /><br />{' '}
+    Sumate a las{' '}
+          <chakra.strong color={useColorModeValue('blue.700', 'blue.500')}>
+            1,000+
+          </chakra.strong>{' '}
+          personas que conforman nuestra comunidad. Compartimos experiencias, consejos y las últimas novedades sobre tecnología aplicada a la diabetes.
+          </chakra.h2>{' '} 
     
       </Box>
       <SimpleGrid columns={{ base: 1, xl: 2 }} spacing={'20'} mt={16} mb={16} mx={'auto'}>
