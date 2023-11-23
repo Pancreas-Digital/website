@@ -7,6 +7,7 @@ import {
   SimpleGrid,
   Tooltip,
   useColorModeValue,
+  useBreakpointValue
 } from '@chakra-ui/react'
 import { FaTelegram } from 'react-icons/fa'
 const testimonials = [
@@ -152,15 +153,15 @@ export default function GridBlurredBackdrop() {
           fontFamily={'Inter'}
           fontWeight={'medium'}
           color={useColorModeValue('blue.500', 'blue.700')}>
-          <Button
+            <Button
             as={'a'}
             href={'https://t.me/+ahNWHtI3Lsg0YTNh'} 
             target="_blank"
             variant={'solid'}
             colorScheme={'telegram'}
-              size={'sm'}
-              mr={4}
-              leftIcon={<FaTelegram />}
+            mr={4}
+            leftIcon={<FaTelegram />}
+            fontSize={useBreakpointValue({ base: 'xs', md: 'md' })}
             >
               Sumate a nuestro Telegram
             </Button>{' '}       

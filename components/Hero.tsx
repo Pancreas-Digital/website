@@ -1,4 +1,5 @@
 import { Stack, Flex, Button, Text, VStack, useBreakpointValue } from '@chakra-ui/react';
+import { FaTelegram } from 'react-icons/fa'
 
 export default function WithBackgroundImage() {
   return (
@@ -30,12 +31,21 @@ export default function WithBackgroundImage() {
             Todo sobre tecnología aplicada a la diabetes
           </Text>
           <Stack direction={'row'} >
-              <Button as='a' href='#blog' bg={'blue.300'} color={'white'} _hover={{ bg: 'blue.600' }}  fontSize={useBreakpointValue({ base: 'xs', md: 'md' })}>
-                Quiero aprender más
-              </Button>
-              <Button as='a' href='#talleres' bg={'whiteAlpha.300'} color={'white'} _hover={{ bg: 'whiteAlpha.500' }} fontSize={useBreakpointValue({ base: 'xs', md: 'md' })}>
-                Mostrame los talleres
-              </Button>
+            <Button
+            as={'a'}
+            href={'https://t.me/+ahNWHtI3Lsg0YTNh'} 
+            target="_blank"
+            variant={'solid'}
+            colorScheme={'telegram'}
+            mr={4}
+            leftIcon={<FaTelegram />}
+            fontSize={useBreakpointValue({ base: 'xs', md: 'md' })}
+            >
+              Sumate a nuestro Telegram
+            </Button>
+            <Button as='a' href='#blog' bg={'whiteAlpha.300'} color={'white'} _hover={{ bg: 'whiteAlpha.500' }} fontSize={useBreakpointValue({ base: 'xs', md: 'md' })}>
+              Quiero aprender más
+            </Button>
           </Stack>
         </Stack>
       </VStack>
