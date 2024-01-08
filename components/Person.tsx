@@ -41,6 +41,7 @@ export default function SocialProfileSimple({
         textAlign={'center'}
       >
         <Avatar
+          loading='lazy'
           size={'xl'}
           src={imgSrc}
           title={name}
