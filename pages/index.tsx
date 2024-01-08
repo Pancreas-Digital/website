@@ -5,7 +5,7 @@ import Person from '../components/Person';
 import LinkWithText from '../components/LinkWithText';
 import VideoCarousel from '../components/VideoCarousel';
 import GridBlurredBackdrop from '../components/Testimonials';
- import BlogPostWithImage from '../components/Blog';
+import BlogPostWithImage from '../components/Blog';
 import PostWithLike from '../components/Project';
 import { BsArrowUpRight, BsArrowDown } from 'react-icons/bs'
 import axios from 'axios';
@@ -28,12 +28,33 @@ type VideoItem = {
   videoId: string;
 };
 
+type Entry = {
+  id: string;
+  title: string;
+  content: string;
+  published: string;
+  updated: string;
+  categories: string[];
+  author: string;
+  authorUri: string;
+  authorEmail: string;
+  authorImage: string;
+  thumbnail: string;
+  commentsCount: string;
+  links: {
+    rel: string;
+    type: string;
+    href: string;
+    title: string | null;
+  }[];
+};
+
 type Props = {
   workshopsVideoIds: VideoItem[];
   tutorialsVideoIds: VideoItem[];
   microsVideoIds: VideoItem[];
 };
-const extractFirstImageUrlFromHtml = (html)=>{
+const extractFirstImageUrlFromHtml = (html:string)=>{
   const imageTagRegex = /<img.*?src="(.*?)"/;
   const matches = imageTagRegex.exec(html);
 
@@ -43,12 +64,12 @@ const extractFirstImageUrlFromHtml = (html)=>{
 
   return ''; // or a default image URL if you prefer
 }
-const cutText = (text,maxLength=200) => {
+const cutText = (text: string, maxLength: number = 200) => {
   if (text.length <= maxLength) return text;
   return text.substring(0, maxLength) + '...';
 }
 
-const stripHtmlAndKeepLineBreaks = (html, maxLength = 200) => {
+const stripHtmlAndKeepLineBreaks = (html:string, maxLength:number = 200) => {
   const withBreaks = html.replace(/<br\s*\/?>/gi, '\n').replace(/<a href=".*?">(.*?)<\/a>/gi, '$1');
   const withoutSpecialCharacters = withBreaks.replace(/&nbsp;/gi, ' ');
   const withoutHtml = withoutSpecialCharacters.replace(/<[^>]+>/g, '');
@@ -69,26 +90,26 @@ const fetchPlaylistVideoIds = async (playlistId: string, apiKey: string, maxVide
   }
 };
 
-const fetchBlogPosts = async () => {
-  const url = 'https://pancreasdigital.blogspot.com/feeds/posts/default?alt=json&max-results=12';
+const fetchBlogPosts = async (): Promise<Entry[]> => {
+  const url = 'https://pancreasdigital.blogspot.com/feeds/posts/default?alt=json&max-results=18';
   try {
     const response = await axios.get(url);
     const data = response.data.feed;
 
-    return data.entry.map(entry => ({
+    return  data.entry.map((entry: any): Entry => ({
       id: entry.id.$t,
       title: entry.title.$t,
       content: entry.content.$t,
       published: entry.published.$t,
       updated: entry.updated.$t,
-      categories: entry.category.map(cat => cat.term),
+      categories: entry.category.map((cat:any) => cat.term),
       author: entry.author[0].name.$t,
       authorUri: entry.author[0].uri.$t,
       authorEmail: entry.author[0].email.$t,
       authorImage: entry.author[0]["gd$image"].src,
       thumbnail: entry["media$thumbnail"].url,
       commentsCount: entry.thr$total.$t,
-      links: entry.link.map(link => ({
+      links: entry.link.map((link: any) => ({
         rel: link.rel,
         type: link.type,
         href: link.href,
@@ -107,7 +128,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const workshopsPlaylistId = 'PLpRCplanZUGdxMODznBwjIQNZg0HeJdww';
   const tutorialsPlaylistId = 'PLpRCplanZUGe4wrdCUOfzSKrW1bJlwSk3';
   const microsPlaylistId = 'PLpRCplanZUGf5YaI5VMhfx81h8EaQ2qy3';
-  const blogPosts = await fetchBlogPosts();
+  const blogPosts = await fetchBlogPosts() as Entry[];
   // Simultaneously fetch videos from all playlists
   const [workshopsVideoIds, tutorialsVideoIds, microsVideoIds] = await Promise.all([
     fetchPlaylistVideoIds(workshopsPlaylistId, apiKey,maxVideos),
@@ -127,7 +148,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     revalidate: 3600,
   };
 };
-const IndexPage  = ({workshopsVideoIds={},tutorialsVideoIds={},microsVideoIds={},blogPosts={}}) => (
+const IndexPage  = ({workshopsVideoIds={},tutorialsVideoIds={},microsVideoIds={},blogPosts=[]}) => (
   <Layout>
     <Hero />
     <Section
@@ -206,7 +227,7 @@ const IndexPage  = ({workshopsVideoIds={},tutorialsVideoIds={},microsVideoIds={}
     "Nuestro blog es un espacio donde compartimos noticias, consejos y todo lo que necesitás saber sobre tecnología y diabetes.", 
     "Mantenete siempre un paso adelante."
   ]}
-  childrens={blogPosts.map(entry => {
+  childrens={blogPosts.map((entry:Entry) => {
     // Asegúrate de que 'categories' exista y sea un arreglo
     const categories = entry.categories || ['General'];
   

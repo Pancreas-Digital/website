@@ -15,7 +15,7 @@ type Props = {
   tags?: string[];
   author?: { name: string; imgSrc: string; url: string; };
 };
-const cutText = (text,maxLength=200) => {
+const cutText = (text: string, maxLength: number = 200) => {
   if (text.length <= maxLength) return text;
   return text.substring(0, maxLength) + '...';
 }
@@ -63,7 +63,7 @@ export default function BlogPostWithImage({
             {cutText(post.title,40)}
           </Heading>
           <Text color={'gray.500'}>
-            {cutText(post.text,150)}
+            {cutText(post.text as string,150)}
           </Text>
           <br /> 
           <Text color={'gray.500'} as='b'>Haz click para seguir leyendo</Text>
