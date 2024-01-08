@@ -1,6 +1,9 @@
 const { PHASE_DEVELOPMENT_SERVER } = require('next/constants');
 module.exports = (phase) => {
   return {
+    images: {
+      domains: ['blogger.googleusercontent.com'],
+    },
     env: {
       siteUrl: phase === PHASE_DEVELOPMENT_SERVER ? 'http://localhost:3000' : 'https://pancreas.digital',
       siteTitle: 'Pancreas Digital - Todo sobre tecnología aplicada a la diabetes',
