@@ -5,7 +5,6 @@ import {
   Box,
   Heading,
   Text,
-  Img,
   Flex,
   Center,
   useColorModeValue,
