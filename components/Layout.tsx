@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import '@fontsource/raleway/400.css';
 import '@fontsource/open-sans/700.css';
 
@@ -47,6 +47,7 @@ const Layout = ({children}: Props) => (
       </Box>
     </Box>
     <Footer />
+    <SpeedInsights />
   </ChakraProvider>
 );
 

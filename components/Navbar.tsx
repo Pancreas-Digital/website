@@ -91,6 +91,7 @@ export default function withAction() {
                   objectFit="cover"
                   src="HorizontalBlue.png"
                   alt="Pancreas Digital Logo"
+                  loading='lazy'
                 />
             </Link>
             <HStack
