@@ -51,13 +51,14 @@ export default function PostWithLike({
         borderColor="blue.600"
         boxShadow={useColorModeValue('6px 6px 0 #2B6CB0', '6px 6px 0 #EBF8FF')}>
         <Box h={'200px'} borderBottom={'1px'} borderColor="blue.600">
-          <Img
+          <Image
             src={imgSrc}
             roundedTop={'sm'}
             objectFit="cover"
             h="full"
             w="full"
             alt={name+' Image'}
+            loading={'lazy'}
           />
         </Box>
         <Box p={4}>
@@ -103,6 +104,8 @@ export default function PostWithLike({
           >  
             <Image
               w='25px'
+              h="full"
+              loading='lazy'  
               src={iconSrc}
               alt={name+' Icon'}
             />

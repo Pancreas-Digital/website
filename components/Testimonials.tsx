@@ -118,6 +118,9 @@ function TestimonialCard(props: TestimonialCardProps) {
     boxSize='50px'
     src={avatar}
     align={'center'}
+    loading='lazy'
+    w={'50px'}
+    h={'50px'}
   />
     </Flex>
   )
@@ -184,6 +187,7 @@ export default function GridBlurredBackdrop() {
         boxSize={10} 
         color={'red.700'} 
         src="/Blood.png"
+        loading='lazy'
         />
       </SimpleGrid>
     </Flex>

@@ -43,6 +43,8 @@ export default function BlogPostWithImage({
                 fallbackSrc={'Illustrations.jpg'}
                 alt={post.title}
                 as={'img'}
+                loading={'lazy'}
+                w="full"    
             />
           </Stack>
           <Stack align={'right'} justify={'right'} direction={'row'} mt={6}>
