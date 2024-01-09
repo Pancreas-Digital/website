@@ -1,6 +1,18 @@
 const { PHASE_DEVELOPMENT_SERVER } = require('next/constants');
 module.exports = (phase) => {
   return {
+    async rewrites() {
+        return [
+            {
+                source: '/registrate',
+                destination: '/register'
+            },
+            {
+                source: '/api/proxy/blog/:path*',
+                destination: 'https://pancreasdigital.blogspot.com/:path*' // URL del servidor externo
+            }
+        ];
+    },
     images: {
       domains: ['blogger.googleusercontent.com'],
     },

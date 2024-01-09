@@ -43,7 +43,7 @@ export default function WithBackgroundImage() {
             >
               Sumate a nuestro Telegram
             </Button>
-            <Button as='a' href='#blog' bg={'whiteAlpha.300'} color={'white'} _hover={{ bg: 'whiteAlpha.500' }} fontSize={useBreakpointValue({ base: 'xs', md: 'md' })}>
+            <Button as='a' href='/blog' bg={'whiteAlpha.300'} color={'white'} _hover={{ bg: 'whiteAlpha.500' }} fontSize={useBreakpointValue({ base: 'xs', md: 'md' })}>
               Quiero aprender más
             </Button>
           </Stack>

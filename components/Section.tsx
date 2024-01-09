@@ -28,24 +28,21 @@ export default function Section({ childrens = [<div />],bottomChildrens = [<div 
           {text}
         </Text>
       ))}
-  
-  <Grid templateColumns='repeat(10, 1fr)' gap={4}>
-  <GridItem colSpan={9}>
-    <HStack key={id} display={{ sm: 'flex' }} alignItems="center" justify="center">
-      <Wrap spacing="8" justify="center" alignItems="center">
-      {
-        childrens.map(
-          (children) => (
-              <WrapItem key={new Date().valueOf()} padding="1">{children}</WrapItem>
-          )
-        )
-      }
-      </Wrap>
-    </HStack>  
-  </GridItem>
-</Grid>
-      
-      
+      <Grid templateColumns='repeat(10, 1fr)' gap={4}>
+        <GridItem colSpan={9}>
+          <HStack key={id} display={{ sm: 'flex' }} alignItems="center" justify="center">
+            <Wrap spacing="8" justify="center" alignItems="center">
+            {
+              childrens.map(
+                (children) => (
+                    <WrapItem key={new Date().valueOf()} padding="1">{children}</WrapItem>
+                )
+              )
+            }
+            </Wrap>
+          </HStack>  
+        </GridItem>
+      </Grid>
       {bottomChildrens.map((children) => (
       <HStack key={id} display={{ sm: 'flex' }} alignItems="left" justify="left">
         <Wrap spacing="10" justify="left" alignItems="left">

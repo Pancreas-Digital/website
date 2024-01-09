@@ -14,19 +14,21 @@ import { HamburgerIcon, CloseIcon,} from '@chakra-ui/icons';
 import { FaYoutube } from 'react-icons/fa';
 
 const Links = [
-  { text: 'Comunidad', url: '#comunidad', submenu: [] },
-  { text: 'Tecnología', url: '#tecnologia', submenu: [] },
-  { text: 'Talleres', url: '#talleres', submenu: [] },
+  { text: 'Comunidad', url: '/comunidad', submenu: [] },
+  { text: 'Tecnología', url: '/tecnologia', submenu: [] },
+  { text: 'Talleres', url: '/talleres', submenu: [] },
   {
-    text: 'Blog', url: '#blog',
+    text: 'Blog', url: '/blog',
     submenu: [
-      { text: 'En primera persona', url: '#en-primera-persona' },
-      { text: 'Desde adentro', url: '#desde-adentro' },
-      { text: 'Psicología', url: '#psicologia' },
-      { text: 'Vida saludable', url: '#vida-saludable' },
-      { text: 'Ciencia y tecnología', url: '#ciencia-y-tecnologia' }]
+      { text: 'En primera persona', url: '/#en-primera-persona' },
+      { text: 'Desde adentro', url: '/#desde-adentro' },
+      { text: 'Psicología', url: '/#psicologia' },
+      { text: 'Vida saludable', url: '/#vida-saludable' },
+      { text: 'Ciencia y tecnología', url: '/#ciencia-y-tecnologia' }]
   },
-  { text: 'Tutoriales', url: '#tutoriales', submenu: [] },
+  { text: 'Tutoriales', url: '/tutoriales', submenu: [] },
+  { text: 'Registrate', url: '/registrate', submenu: [] },
+  
 ];
 type Children = {
   text: string;
@@ -83,7 +85,7 @@ export default function withAction() {
             backgroundColor={'blue.50'}
           />
           <HStack spacing={8} alignItems={'center'}>
-            <Link href='#intro'>
+            <Link href='/'>
               <Image
                   boxSize="240px"
                   maxHeight="70px"
