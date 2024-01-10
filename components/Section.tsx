@@ -24,7 +24,7 @@ export default function Section({ childrens = [<div />],bottomChildrens = [<div 
         borderBottomColor="blue.50"
       />
       {texts.map((text) => (
-        <Text key={text} fontSize="20px" pt="2" color="blue.50" textColor="blue.600">
+        <Text fontSize="20px" pt="2" color="blue.50" textColor="blue.600">
           {text}
         </Text>
       ))}
@@ -35,7 +35,7 @@ export default function Section({ childrens = [<div />],bottomChildrens = [<div 
             {
               childrens.map(
                 (children) => (
-                    <WrapItem key={new Date().valueOf()} padding="1">{children}</WrapItem>
+                    <WrapItem padding="1">{children}</WrapItem>
                 )
               )
             }

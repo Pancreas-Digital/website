@@ -19,12 +19,6 @@ const Links = [
   { text: 'Talleres', url: '/talleres', submenu: [] },
   {
     text: 'Blog', url: '/blog',
-    submenu: [
-      { text: 'En primera persona', url: '/#en-primera-persona' },
-      { text: 'Desde adentro', url: '/#desde-adentro' },
-      { text: 'Psicología', url: '/#psicologia' },
-      { text: 'Vida saludable', url: '/#vida-saludable' },
-      { text: 'Ciencia y tecnología', url: '/#ciencia-y-tecnologia' }]
   },
   { text: 'Tutoriales', url: '/tutoriales', submenu: [] },
   { text: 'Registrate', url: '/registrate', submenu: [] },
@@ -101,8 +95,7 @@ export default function withAction() {
               spacing={4}
               display={{ base: 'none', md: 'flex' }}>
               {Links.map((link) => (
-                <NavLink key={link.url
-                }>{link}</NavLink>
+                <NavLink key={link.url}>{link}</NavLink>
               ))}
             </HStack>
           </HStack>
