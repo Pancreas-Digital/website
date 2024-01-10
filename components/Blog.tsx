@@ -1,6 +1,6 @@
-import Section from './Section';
-import LinkWithText from './LinkWithText';
-import BlogPostWithImage from './BlogPost';
+import Section from '../components/Section';
+import LinkWithText from '../components/LinkWithText';
+import BlogPostWithImage from '../components/BlogPost';
 import {extractFirstImageUrlFromHtml, fetchBlogPosts, stripHtmlAndKeepLineBreaks, Entry} from '../utils/blogService';
 import { useState, useEffect } from 'react';
 
@@ -17,7 +17,7 @@ export default function Blog(){
     fetchData();
   }, []);
 
- return (<Section
+  return (<Section
       title="Nuestro Blog"
       id={'blog'}
       texts={[
