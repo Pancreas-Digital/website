@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { cacheService } from './cacheService';
 
 export type Entry = {
     id: string;
@@ -41,35 +42,39 @@ export const stripHtmlAndKeepLineBreaks = (html:string, maxLength:number = 200) 
     const withoutHtml = withoutSpecialCharacters.replace(/<[^>]+>/g, '');
     return cutText(withoutHtml,maxLength);
 };
-
+  
 export async function fetchBlogPosts() {
-  const url = '/api/proxy/blog/feeds/posts/default?alt=json&max-results=18';
-  try {
-    const response = await axios.get(url);
-    const data = response.data.feed;
-
-    return  data.entry.map((entry: any): Entry => ({
-      id: entry.id.$t,
-      title: entry.title.$t,
-      content: entry.content.$t,
-      published: entry.published.$t,
-      updated: entry.updated.$t,
-      categories: entry.category.map((cat:any) => cat.term),
-      author: entry.author[0].name.$t,
-      authorUri: entry.author[0].uri.$t,
-      authorEmail: entry.author[0].email.$t,
-      authorImage: entry.author[0]["gd$image"].src,
-      thumbnail: entry["media$thumbnail"].url,
-      commentsCount: entry.thr$total.$t,
-      links: entry.link.map((link: any) => ({
-        rel: link.rel,
-        type: link.type,
-        href: link.href,
-        title: link.title ? link.title : null
-      })),
-    }));
-  } catch (error) {
-    console.error('Error fetching blog posts:', error);
-    return [];
+    const fetchFunction = async () => {
+      try {
+        const url = '/api/proxy/blog/feeds/posts/default?alt=json&max-results=18';
+        const response = await axios.get(url);
+        const entries = response.data.feed.entry;
+  
+        // Data Mapping
+        return entries.map((entry: any): Entry => ({
+          id: entry.id.$t,
+          title: entry.title.$t,
+          content: entry.content.$t,
+          published: entry.published.$t,
+          updated: entry.updated.$t,
+          categories: entry.category.map((cat: any) => cat.term),
+          author: entry.author[0].name.$t,
+          authorUri: entry.author[0].uri.$t,
+          authorEmail: entry.author[0].email.$t,
+          authorImage: entry.author[0]["gd$image"].src,
+          thumbnail: entry["media$thumbnail"].url,
+          commentsCount: entry.thr$total.$t,
+          links: entry.link.map((link: any) => ({
+            rel: link.rel,
+            type: link.type,
+            href: link.href,
+            title: link.title ? link.title : null
+          })),
+        }));
+      } catch (error) {
+        console.error('Error fetching blog posts:', error);
+        throw error; 
+      }
+    };
+    return cacheService.getOrUpdate('blogPosts', fetchFunction,3600);
   }
-};
