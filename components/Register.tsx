@@ -1,3 +1,4 @@
+import NextLink from 'next/link';
 import React, { useState, useEffect } from 'react';
 import {
     Button, VStack, Text, Flex, Stack,
@@ -11,10 +12,10 @@ export default function RegisterWithBackgroundImage() {
     const [isDrawerInitiallyOpen, setDrawerInitiallyOpen] = useState(true);
 
     useEffect(() => {
-      if (isDrawerInitiallyOpen) {
-        onOpen();
-        setDrawerInitiallyOpen(false); // Evita abrir automáticamente en el futuro
-      }
+        if (isDrawerInitiallyOpen) {
+            onOpen();
+            setDrawerInitiallyOpen(false); // Evita abrir automáticamente en el futuro
+        }
     }, [isDrawerInitiallyOpen, onOpen]);
 
     return (
@@ -59,9 +60,10 @@ export default function RegisterWithBackgroundImage() {
                         >
                             Regístrate
                         </Button>
-                        <Button as='a' href='/login' bg={'whiteAlpha.300'} color={'white'} _hover={{ bg: 'whiteAlpha.500' }} fontSize={useBreakpointValue({ base: 'xs', md: 'md' })}>
-                            Inicia sesión
-                        </Button>
+                        <NextLink href='/login' passHref>
+                            <Button as='a' bg={'whiteAlpha.300'} color={'white'} _hover={{ bg: 'whiteAlpha.500' }} fontSize={useBreakpointValue({ base: 'xs', md: 'md' })}>
+                                Inicia sesión
+                            </Button> </NextLink>
                     </Stack>
                 </Stack>
             </VStack>
@@ -87,7 +89,8 @@ export default function RegisterWithBackgroundImage() {
                                 Regístrate con GitHub
                             </Button>
                             <Text color={'gray.600'} fontSize={'md'}>
-                                ¿Ya tienes una cuenta? <Button as='a' href='/login' variant={'link'} colorScheme={'blue'}>Inicia sesión aquí</Button>
+                                ¿Ya tienes una cuenta? <NextLink href='/login' passHref>
+                                    <Button as='a' variant={'link'} colorScheme={'blue'}>Inicia sesión aquí</Button> </NextLink>
                             </Text>
                         </VStack>
                     </DrawerBody>
