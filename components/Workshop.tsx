@@ -9,10 +9,9 @@ export default function Workshop(){
     const [workshopsVideoIds, setWorkshopsVideoIds] = useState([]);
     useEffect(() => {
         async function fetchData() {
-            const apiKey = process.env.YOUTUBE_API_KEY as string;
             const maxVideos = 50 as number;
             const workshopsPlaylistId = 'PLpRCplanZUGdxMODznBwjIQNZg0HeJdww';
-            const videos = await fetchPlaylistVideoIds(workshopsPlaylistId, apiKey, maxVideos);
+            const videos = await fetchPlaylistVideoIds(workshopsPlaylistId,maxVideos);
             setWorkshopsVideoIds(videos);
         }
 

@@ -2,18 +2,19 @@ const { PHASE_DEVELOPMENT_SERVER } = require('next/constants');
 module.exports = (phase) => {
   return {
     async rewrites() {
+      
       return [
         {
           source: '/registrate',
           destination: '/register'
         },
         {
-          source: '/api/proxy/blog/:path*',
+          source: '/api/blog/:path*',
           destination: 'https://pancreasdigital.blogspot.com/:path*' // blog api url
         },
         {
-          source: '/api/proxy/google/:path*',
-          destination: 'https://www.googleapis.com/:path*' // youtube api url
+          source: '/api/google/:path*',
+          destination:  '/api/interceptor/google/:path*' //add some logic for security reasons
         }
       ];
     },

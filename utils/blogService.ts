@@ -46,7 +46,7 @@ export const stripHtmlAndKeepLineBreaks = (html:string, maxLength:number = 200) 
 export async function fetchBlogPosts() {
     const fetchFunction = async () => {
       try {
-        const url = '/api/proxy/blog/feeds/posts/default?alt=json&max-results=18';
+        const url = '/api/blog/feeds/posts/default?alt=json&max-results=18';
         const response = await axios.get(url);
         const entries = response.data.feed.entry;
   

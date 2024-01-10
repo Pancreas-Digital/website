@@ -21,12 +21,12 @@ export type VideoItem = {
     videoId: string;
 };
 
-export async function fetchPlaylistVideoIds(playlistId: string, apiKey: string, maxVideos: number) {
-    const cacheKey = `playlistVideos-${playlistId}`; // A unique cache key based on the playlist ID
+export async function fetchPlaylistVideoIds(playlistId: string, maxVideos: number) {
+    const cacheKey = `playlistVideo-${playlistId}`; // A unique cache key based on the playlist ID
 
     // The function to actually make the API request and process the data
     const fetchFunction = async () => {
-        const url = `/api/proxy/google/youtube/v3/playlistItems?part=snippet&playlistId=${playlistId}&maxResults=${maxVideos}&key=${apiKey}`;
+        const url = `/api/google/playlistItems?part=snippet&playlistId=${playlistId}&maxResults=${maxVideos}`;
         try {
             const response  = await axios.get(url);
             return response.data.items.map((item : YouTubeApiResponseItem)  => ({

@@ -27,29 +27,7 @@ type VideoItem = {
   videoId: string;
 };
 
-type Entry = {
-  id: string;
-  title: string;
-  content: string;
-  published: string;
-  updated: string;
-  categories: string[];
-  author: string;
-  authorUri: string;
-  authorEmail: string;
-  authorImage: string;
-  thumbnail: string;
-  commentsCount: string;
-  links: {
-    rel: string;
-    type: string;
-    href: string;
-    title: string | null;
-  }[];
-};
-
 type Props = {
-  workshopsVideoIds: VideoItem[];
   tutorialsVideoIds: VideoItem[];
   microsVideoIds: VideoItem[];
 };
@@ -67,48 +45,13 @@ const fetchPlaylistVideoIds = async (playlistId: string, apiKey: string, maxVide
   }
 };
 
-const fetchBlogPosts = async (): Promise<Entry[]> => {
-  const url = 'https://pancreasdigital.blogspot.com/feeds/posts/default?alt=json&max-results=18';
-  try {
-    const response = await axios.get(url);
-    const data = response.data.feed;
-
-    return  data.entry.map((entry: any): Entry => ({
-      id: entry.id.$t,
-      title: entry.title.$t,
-      content: entry.content.$t,
-      published: entry.published.$t,
-      updated: entry.updated.$t,
-      categories: entry.category.map((cat:any) => cat.term),
-      author: entry.author[0].name.$t,
-      authorUri: entry.author[0].uri.$t,
-      authorEmail: entry.author[0].email.$t,
-      authorImage: entry.author[0]["gd$image"].src,
-      thumbnail: entry["media$thumbnail"].url,
-      commentsCount: entry.thr$total.$t,
-      links: entry.link.map((link: any) => ({
-        rel: link.rel,
-        type: link.type,
-        href: link.href,
-        title: link.title ? link.title : null
-      })),
-    }));
-  } catch (error) {
-    console.error('Error fetching blog posts:', error);
-    return [];
-  }
-};
-
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const apiKey = process.env.YOUTUBE_API_KEY as string;
   const maxVideos = 50 as number;
-  const workshopsPlaylistId = 'PLpRCplanZUGdxMODznBwjIQNZg0HeJdww';
   const tutorialsPlaylistId = 'PLpRCplanZUGe4wrdCUOfzSKrW1bJlwSk3';
   const microsPlaylistId = 'PLpRCplanZUGf5YaI5VMhfx81h8EaQ2qy3';
-  const blogPosts = await fetchBlogPosts() as Entry[];
   // Simultaneously fetch videos from all playlists
-  const [workshopsVideoIds, tutorialsVideoIds, microsVideoIds] = await Promise.all([
-    fetchPlaylistVideoIds(workshopsPlaylistId, apiKey,maxVideos),
+  const [tutorialsVideoIds, microsVideoIds] = await Promise.all([
     fetchPlaylistVideoIds(tutorialsPlaylistId, apiKey,maxVideos),
     fetchPlaylistVideoIds(microsPlaylistId, apiKey,maxVideos),
   ]);
@@ -116,16 +59,14 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   // Return the lists of video IDs as props
   return {
     props: {
-      workshopsVideoIds,
       tutorialsVideoIds,
       microsVideoIds,
-      blogPosts
     },
     // Revalidate at most once every hour if there's new content
     revalidate: 3600,
   };
 };
-const IndexPage  = ({workshopsVideoIds={},tutorialsVideoIds={},microsVideoIds={}}) => (
+const IndexPage  = ({tutorialsVideoIds={},microsVideoIds={}}) => (
   <Layout>
     <Hero />
     <Community />
