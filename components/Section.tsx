@@ -30,7 +30,7 @@ export default function Section({ childrens = [<div />],bottomChildrens = [<div 
       ))}
       <Grid templateColumns='repeat(10, 1fr)' gap={4}>
         <GridItem colSpan={9}>
-          <HStack key={id} display={{ sm: 'flex' }} alignItems="center" justify="center">
+          <HStack display={{ sm: 'flex' }} alignItems="center" justify="center">
             <Wrap spacing="8" justify="center" alignItems="center">
             {
               childrens.map(
@@ -44,7 +44,7 @@ export default function Section({ childrens = [<div />],bottomChildrens = [<div 
         </GridItem>
       </Grid>
       {bottomChildrens.map((children) => (
-      <HStack key={id} display={{ sm: 'flex' }} alignItems="left" justify="left">
+      <HStack display={{ sm: 'flex' }} alignItems="left" justify="left">
         <Wrap spacing="10" justify="left" alignItems="left">
             <WrapItem>{children}</WrapItem>
         </Wrap>
