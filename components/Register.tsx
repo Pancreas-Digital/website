@@ -61,9 +61,10 @@ export default function RegisterWithBackgroundImage() {
                             Regístrate
                         </Button>
                         <NextLink href='/login' passHref>
-                            <Button as='a' bg={'whiteAlpha.300'} color={'white'} _hover={{ bg: 'whiteAlpha.500' }} fontSize={useBreakpointValue({ base: 'xs', md: 'md' })}>
+                            <Button bg={'whiteAlpha.300'} color={'white'} _hover={{ bg: 'whiteAlpha.500' }} fontSize={useBreakpointValue({ base: 'xs', md: 'md' })}>
                                 Inicia sesión
-                            </Button> </NextLink>
+                            </Button> 
+                        </NextLink>
                     </Stack>
                 </Stack>
             </VStack>
@@ -89,8 +90,9 @@ export default function RegisterWithBackgroundImage() {
                                 Regístrate con GitHub
                             </Button>
                             <Text color={'gray.600'} fontSize={'md'}>
-                                ¿Ya tienes una cuenta? <NextLink href='/login' passHref>
-                                    <Button as='a' variant={'link'} colorScheme={'blue'}>Inicia sesión aquí</Button> </NextLink>
+                                ¿Ya tienes una cuenta? 
+                                <NextLink href='/login' passHref>
+                                    <Button variant={'link'} colorScheme={'blue'}>Inicia sesión aquí</Button> </NextLink>
                             </Text>
                         </VStack>
                     </DrawerBody>

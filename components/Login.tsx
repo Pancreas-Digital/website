@@ -55,8 +55,7 @@ export default function LoginWithBackgroundImage() {
                     </Text>
                     <Stack direction={'row'} >
                         <NextLink href='/register' passHref>
-
-                            <Button as='a' bg={'whiteAlpha.300'} color={'white'} _hover={{ bg: 'whiteAlpha.500' }} fontSize={useBreakpointValue({ base: 'xs', md: 'md' })}>
+                            <Button bg={'whiteAlpha.300'} color={'white'} _hover={{ bg: 'whiteAlpha.500' }} fontSize={useBreakpointValue({ base: 'xs', md: 'md' })}>
                                 Regístrate ahora
                             </Button>
                         </NextLink>
@@ -96,7 +95,7 @@ export default function LoginWithBackgroundImage() {
                             </Button>
                             <Text color={'gray.600'} fontSize={'md'}>
                                 ¿Aún no estás registrado? <NextLink href='/register' passHref>
-                                    <Button as='a' variant={'link'} colorScheme={'blue'}>Crea tu cuenta aquí</Button>
+                                    <Button variant={'link'} colorScheme={'blue'}>Crea tu cuenta aquí</Button>
                                 </NextLink>
                             </Text>
                         </VStack>

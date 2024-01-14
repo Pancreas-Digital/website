@@ -24,6 +24,7 @@ const NavLink = ({ text, url }: NavLinkProps) => {
     return (
         <NextLink href={url} passHref>
             <Link
+                as="button"
                 px={2}
                 py={2}
                 fontWeight="bold"
@@ -74,7 +75,6 @@ export default function WithAction() {
                     />
                     <HStack spacing={8} alignItems={'center'}>
                         <NextLink href='/' passHref>
-                            <Link>
                                 <Image
                                     boxSize="240px"
                                     maxHeight="70px"
@@ -84,7 +84,6 @@ export default function WithAction() {
                                     alt="Pancreas Digital Logo"
                                     loading='lazy'
                                 />
-                            </Link>
                         </NextLink>
                         <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
                             {Links.map((link) => (
