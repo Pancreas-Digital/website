@@ -29,14 +29,14 @@ export default function WithBackgroundImage() {
                         lineHeight={1.2}
                         fontSize={useBreakpointValue({ base: '4xl', md: '5xl' })}
                     >
-                        404 - Página No Encontrada
+                        404 - Error de Lectura del Sensor
                     </Text>
                     <Text
                         color={'white'}
                         fontWeight={500}
                         fontSize={useBreakpointValue({ base: 'md', md: 'lg' })}
                     >
-                        ¡Oops! La página que estás buscando no existe.
+                        ¡Vaya! Esta página está tan fuera de alcance como un sensor de glucosa descalibrado. Ajustemos el rumbo y encontremos algo que puedas leer.
                     </Text>
                     <Stack direction={'row'}>
                     <Button
