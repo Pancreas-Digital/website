@@ -1,5 +1,4 @@
-import Layout from '../components/Layout';
-import Error from '../components/Error';
+import {Layout,Error} from '../components';
 
 const CustomErrorPage  = () => (
   <Layout>

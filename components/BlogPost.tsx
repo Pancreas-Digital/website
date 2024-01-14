@@ -20,7 +20,7 @@ const cutText = (text: string, maxLength: number = 200) => {
   return text.substring(0, maxLength) + '...';
 }
 
-export default function BlogPostWithImage({
+export default function BlogPost({
   post = { title: '', url: '#',imgSrc:'', text:'', date:'' },
   tags = [''],
   author = { name: '', url: '#',imgSrc:'' },

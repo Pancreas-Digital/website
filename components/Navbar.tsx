@@ -7,19 +7,20 @@ import { useRouter } from 'next/router';
 type NavLinkProps = {
     text: string;
     url: string;
+    compareUrl: string;
 };
 
 const Links: NavLinkProps[] = [
-    { text: 'Comunidad', url: '/comunidad' },
-    { text: 'Tecnología', url: '/tecnologia' },
-    { text: 'Talleres', url: '/talleres' },
-    { text: 'Blog', url: '/blog' },
-    { text: 'Tutoriales', url: '/tutoriales' },
+    { text: 'Comunidad', url: '/comunidad', compareUrl: '/community' },
+    { text: 'Tecnología', url: '/tecnologia', compareUrl: '/technology' },
+    { text: 'Talleres', url: '/talleres', compareUrl: '/workshops' },
+    { text: 'Blog', url: '/blog', compareUrl: '/blog' },
+    { text: 'Tutoriales', url: '/tutoriales',  compareUrl: '/tutorials' },
 ];
 
-const NavLink = ({ text, url }: NavLinkProps) => {
+const NavLink = ({ text, url, compareUrl }: NavLinkProps) => {
     const router = useRouter();
-    const isActive = router.pathname === url;
+    const isActive = router.pathname === compareUrl;
 
     return (
         <NextLink href={url} passHref>

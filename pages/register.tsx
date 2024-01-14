@@ -1,7 +1,4 @@
-import React from 'react';
-
-import Register from '../components/Register';
-import Layout from '../components/Layout';
+import {Layout,Register} from '../components';
 
 const LoginPage = () => {
   return (

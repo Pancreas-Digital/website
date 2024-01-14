@@ -5,9 +5,29 @@ module.exports = (phase) => {
       
       return [
         {
+          source: '/comunidad',
+          destination: '/community'
+        },
+        {
+          source: '/logueate',
+          destination: '/login'
+        },
+        {
           source: '/registrate',
           destination: '/register'
-        },
+        },        
+        {
+          source: '/tecnologia',
+          destination: '/technology'
+        },        
+        {
+          source: '/tutoriales',
+          destination: '/tutorials'
+        },        
+        {
+          source: '/talleres',
+          destination: '/workshops'
+        },        
         {
           source: '/api/blog/:path*',
           destination: 'https://pancreasdigital.blogspot.com/:path*' // blog api url

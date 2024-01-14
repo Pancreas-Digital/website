@@ -1,5 +1,5 @@
-import Layout from '../components/Layout';
-import Blog from '../components/Blog';
+import {Layout,Blog} from '../components';
+
 
 const BlogPage  = () => (
   <Layout>

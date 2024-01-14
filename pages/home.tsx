@@ -1,9 +1,8 @@
-import Layout from '../components/Layout';
-import Hero from '../components/Hero';
+import {Layout,Hero} from '../components';
 
-const IndexPage  = () => (
+const HomePage  = () => (
   <Layout>
     <Hero />
   </Layout>
 );
-export default IndexPage;
+export default HomePage;
