@@ -54,7 +54,7 @@ export default function LoginWithBackgroundImage() {
                         Regístrate para descubrir más o inicia sesión y continúa tu experiencia.
                     </Text>
                     <Stack direction={'row'} >
-                        <NextLink href='/register' passHref>
+                        <NextLink href='/registrate' passHref>
                             <Button bg={'whiteAlpha.300'} color={'white'} _hover={{ bg: 'whiteAlpha.500' }} fontSize={useBreakpointValue({ base: 'xs', md: 'md' })}>
                                 Regístrate ahora
                             </Button>
@@ -94,7 +94,7 @@ export default function LoginWithBackgroundImage() {
                                 Iniciar sesión con GitHub
                             </Button>
                             <Text color={'gray.600'} fontSize={'md'}>
-                                ¿Aún no estás registrado? <NextLink href='/register' passHref>
+                                ¿Aún no estás registrado? <NextLink href='/registrate' passHref>
                                     <Button variant={'link'} colorScheme={'blue'}>Crea tu cuenta aquí</Button>
                                 </NextLink>
                             </Text>

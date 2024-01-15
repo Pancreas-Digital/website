@@ -60,7 +60,7 @@ export default function RegisterWithBackgroundImage() {
                         >
                             Regístrate
                         </Button>
-                        <NextLink href='/login' passHref>
+                        <NextLink href='/inicia-sesion' passHref>
                             <Button bg={'whiteAlpha.300'} color={'white'} _hover={{ bg: 'whiteAlpha.500' }} fontSize={useBreakpointValue({ base: 'xs', md: 'md' })}>
                                 Inicia sesión
                             </Button> 
@@ -91,7 +91,7 @@ export default function RegisterWithBackgroundImage() {
                             </Button>
                             <Text color={'gray.600'} fontSize={'md'}>
                                 ¿Ya tienes una cuenta? 
-                                <NextLink href='/login' passHref>
+                                <NextLink href='/inicia-sesion' passHref>
                                     <Button variant={'link'} colorScheme={'blue'}>Inicia sesión aquí</Button> </NextLink>
                             </Text>
                         </VStack>

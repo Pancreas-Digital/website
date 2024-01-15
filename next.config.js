@@ -9,7 +9,7 @@ module.exports = (phase) => {
           destination: '/community'
         },
         {
-          source: '/logueate',
+          source: '/inicia-sesion',
           destination: '/login'
         },
         {
