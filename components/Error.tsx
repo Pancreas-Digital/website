@@ -15,24 +15,31 @@ export default function WithBackgroundImage() {
             backgroundRepeat="no-repeat"
             id='intro'
         >
-            <VStack
+           
+           <VStack
                 w={'full'}
                 justify={'center'}
                 px={useBreakpointValue({ base: 4, md: 8 })}
                 bgGradient={'linear(to-r, blackAlpha.600, transparent)'}
             >
-                <Stack align={'flex-start'} spacing={6} maxW={'90%'}
-                >
+                <Stack align={'flex-start'} spacing={6} maxW={'90%'}>
                     <Text
                         color={'white'}
                         fontWeight={700}
                         lineHeight={1.2}
                         fontSize={useBreakpointValue({ base: '4xl', md: '5xl' })}
                     >
-                        Todo sobre tecnología aplicada a la diabetes
+                        404 - Página No Encontrada
                     </Text>
-                    <Stack direction={'row'} >
-                        <Button
+                    <Text
+                        color={'white'}
+                        fontWeight={500}
+                        fontSize={useBreakpointValue({ base: 'md', md: 'lg' })}
+                    >
+                        Como un sensor desconectado, esta página se perdió. ¡Haz el ABC como en xDrip+: Actualiza, Busca o Contáctanos!".
+                    </Text>
+                    <Stack direction={'row'}>
+                    <Button
                             as={'a'}
                             href={'https://t.me/+ahNWHtI3Lsg0YTNh'}
                             target="_blank"
@@ -44,15 +51,14 @@ export default function WithBackgroundImage() {
                         >
                             Sumate a nuestro Telegram
                         </Button>
-                        <NextLink href='/blog' passHref>
+                        <NextLink href='/' passHref>
                             <Button bg={'whiteAlpha.300'} color={'white'} _hover={{ bg: 'whiteAlpha.500' }} fontSize={useBreakpointValue({ base: 'xs', md: 'md' })}>
-                                Quiero aprender más
-                            </Button>
+                                Volver al inicio
+                            </Button> 
                         </NextLink>
-
                     </Stack>
                 </Stack>
-            </VStack>
+            </VStack>        
         </Flex>
     );
 }
