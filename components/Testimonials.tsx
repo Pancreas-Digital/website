@@ -7,9 +7,10 @@ import {
   SimpleGrid,
   Tooltip,
   useColorModeValue,
-  useBreakpointValue
+  useBreakpointValue,
+  HStack
 } from '@chakra-ui/react'
-import { FaTelegram } from 'react-icons/fa'
+import { FaTelegram, FaWhatsapp } from 'react-icons/fa'
 const testimonials = [
   {
     name: 'Monica Oramas',
@@ -156,6 +157,7 @@ export default function GridBlurredBackdrop() {
           fontFamily={'Inter'}
           fontWeight={'medium'}
           color={useColorModeValue('blue.500', 'blue.700')}>
+          <HStack wrap="wrap" gap="6">
             <Button
             as={'a'}
             href={'https://t.me/+ahNWHtI3Lsg0YTNh'} 
@@ -166,14 +168,40 @@ export default function GridBlurredBackdrop() {
             leftIcon={<FaTelegram />}
             fontSize={useBreakpointValue({ base: 'xs', md: 'md' })}
             >
-              Sumate a nuestro Telegram
-            </Button>{' '}       
+              Canal de Telegram
+            </Button>
+            <Button
+            as={'a'}
+            href={'https://chat.whatsapp.com/JYbRZhXtFwCDZQnMdlIqBQ'} 
+            target="_blank"
+            variant={'solid'}
+            colorScheme={'whatsapp'}
+            mr={4}
+            leftIcon={<FaWhatsapp />}
+            fontSize={useBreakpointValue({ base: 'xs', md: 'md' })}
+            >
+              Comunidad AndroidAPS
+            </Button> 
+            <Button
+            as={'a'}
+            href={'https://chat.whatsapp.com/BKeZ8qlCscAHM9Beye1nOv'} 
+            target="_blank"
+            variant={'solid'}
+            colorScheme={'whatsapp'}
+            mr={4}
+            leftIcon={<FaWhatsapp />}
+            fontSize={useBreakpointValue({ base: 'xs', md: 'md' })}
+            >
+              AndroidAPS para Profesionales de Salud
+            </Button>
+            </HStack>
+    
             <br /><br />{' '}
     Sumate a las{' '}
           <chakra.strong color={useColorModeValue('blue.700', 'blue.500')}>
-            1,000+
+            2,000+
           </chakra.strong>{' '}
-          personas que conforman nuestra comunidad. Compartimos experiencias, consejos y las últimas novedades sobre tecnología aplicada a la diabetes.
+          personas que conforman nuestra comunidad a través de los grupos de Whatsapp y Telegram. Compartimos experiencias, consejos y las últimas novedades sobre tecnología aplicada a la diabetes.
           </chakra.h2>{' '} 
     
       </Box>
