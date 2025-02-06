@@ -188,7 +188,7 @@ export default function GridBlurredBackdrop() {
             target="_blank"
             variant={'solid'}
             colorScheme={'whatsapp'}
-            mr={2}
+            mr={4}
             leftIcon={<FaWhatsapp />}
             fontSize={useBreakpointValue({ base: 'xs', md: 'md' })}
             >
